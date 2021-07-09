@@ -10,7 +10,7 @@ dotenv.config({ path: './app.env' })
 /**
  * Connect To the database
  */
-mongoose.connect("mongodb+srv://amydev:Amy123!*@cluster0.ogfnn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
+mongoose.connect("DB",{
     useNewUrlParser:true,
     useUnifiedTopology: true
 });
