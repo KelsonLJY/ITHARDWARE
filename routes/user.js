@@ -7,7 +7,7 @@ router.post('/user/register',(req,res)=>{
     const salt = bcrypt.genSaltSync(15);
     const hash = bcrypt.hashSync(user.password, salt);
     
-    const newTodo=new User_model({
+    const newUser=new User_model({
         email:user.email,
         password:hash,
         full_name:user.full_name,
@@ -19,7 +19,7 @@ router.post('/user/register',(req,res)=>{
         phone : user.mobile
 
     })
-    newTodo.save().then(()=>{
+    newUser.save().then(()=>{
         console.log("done")
         res.redirect('/')
     })
