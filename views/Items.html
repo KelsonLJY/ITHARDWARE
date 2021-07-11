@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IT Hardware</title>
+    <style>
+        body {
+            background-color: white;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+
+        ul {
+            text-align: center;
+            list-style-type: none;
+            margin: 0;
+            padding-top: 30px;
+            overflow: hidden;
+            background-color:darkcyan;
+            height: 80px;
+            width: 100%;
+            padding-right: 50px;
+
+        }
+
+        li {
+            float: left;
+            color: darkgoldenrod;
+            margin-left: 100px;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: transparent;
+            color: #CCAE93;
+        }
+
+        #banner {
+            background-color:white;
+            /*             width: 500%;*/
+        }
+
+        #bannerlogo {
+            text-align: center;
+            padding: 40px 515px;
+        }
+
+        #case {
+            background-color: #F1EAE8;
+            padding: 16px;
+        }
+
+        #case h2,
+        p {
+            padding-left: 175px;
+            width: 70%;
+            color: #534745;
+        }
+        #About {
+            /* background-color: #F1EAE8; */
+            padding: 16px;
+        }
+
+        #About h2,
+        p {
+            padding-left: 175px;
+            width: 70%;
+            color: #534745;
+        }
+
+        #footer {
+            background-color: darkcyan;
+            margin-top: 10px;
+            padding: 10px;
+        }
+        #footer p{
+           color: white;
+        }
+
+        #contact {
+            margin: 0;
+            overflow: hidden;
+            background-color: darkcyan;
+            /* height: 60px; */
+            width: 100%;
+            color: #CCAE93;
+             padding-left: 10px; 
+
+        }
+     #copyright {
+            margin: 0;
+            overflow: hidden;
+            background-color: darkcyan;
+            /* height: 60px; */
+            width: 100%;
+            color: #CCAE93;
+            padding-top: 100px;
+            padding-left: 150px;
+        }
+        /* #service h4{
+            margin: 0;
+            overflow: hidden;
+            background-color: darkcyan;
+            /* height: 60px; */
+            /* color: #CCAE93;
+            padding-left: 150px; 
+        } */
+        #service {
+            margin: 0;
+            overflow: hidden;
+            background-color: darkcyan;
+            /* height: 60px; */
+            color: #CCAE93;
+            padding-right: 150px; 
+        }
+     
+        #footer-flex {
+            display: flex;
+        }
+
+        #footer obj-cont {
+            flex: 1;
+        }
+        /* #contact-flex {
+            display: flex;
+        } */
+          #contact-flex p {
+            padding-bottom: 10px;
+            padding-left: 20px;
+        }
+        #footer img-cont {
+            flex:1;
+        }
+     
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <nav id="nav">
+            <ul>
+                 <!-- <li>
+                    <a href="Home.html" title="Home">Home</a>
+                </li> -->
+                <li>
+                    <a href="Home.html" title="Home">Home</a>
+                </li>
+                <li>
+                    <a href="About.html" title="About">About</a>
+                </li>
+                <li>
+                    <a href="Items.html" title="Items">Items</a>
+                </li>
+                <li>
+                    <a href="Contact.html" title="Contact">Contact</a>
+                </li>
+                <li>
+                    <a href="Login.html" title="Login">Login</a>
+                </li>
+                <li>
+                    <a href="Register.html" title="Register">Register</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+    
+    
+        <div id="searchitems">
+            
+                <label for="search">Search Items:</label>
+                <!-- <input type="text" id="search" name="search"> -->
+   
+                <input type="text" id="desc" onkeyup="myFunction()" placeholder="Items" title="Type in a name" >
+
+                <img src="../img/search_icon.png" width="15px" height="15px" >
+           
+
+            
+
+    <table id="myTable">
+        <tr class="header">
+          <th style="width:30%;">Items</th>
+          <th style="width:30%;">Description</th>
+          <th style="width:20%;">price</th>
+          <th style="width:10%;">Add to Cart</th>
+        </tr>
+        <tr>
+          <td><img src="../img/Picture1.jpg" width="100px" height="100px" ></td>
+          <td>Intel Core i9-11900K Desktop Processor 8 Cores up to 5.3 GHz Unlocked LGA1200 (Intel 500 Series & Select 400 Series Chipset) 125W</td>
+          <td>$900</td>
+          <td>  <a href="../views/Checkout.html"><button >
+            <img src="../img/cart.png" width="15px" height="15px" >
+        </button></a>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="../img/Picture2.jpg" width="100px" height="100px" ></td>
+          <td>Intel Core i7-11700F Desktop Processor 8 Cores up to 4.9 GHz LGA1200 (Intel 500 Series & Select 400 Series Chipset) 65W</td>
+          <td>$500</td>
+          <td><button >
+            <img src="../img/cart.png" width="15px" height="15px" >
+        </button></td>
+        </tr>
+        <tr>
+          <td><img src="../img/Picture3.jpg" width="100px" height="100px" ></td>
+          <td>AMD Ryzen 9 5950X 16-core, 32-Thread Unlocked Desktop Processor</td>
+          <td>$1600</td>
+          <td>
+           <button >
+            <img src="../img/cart.png" width="15px" height="15px" >
+        </button></td>
+        </tr>
+        <tr>
+          <td><img src="../img/Picture4.jpg" width="100px" height="100px" ></td>
+          <td>AMD Ryzen 7 5800X 8-core, 16-Thread Unlocked Desktop Processor</td>
+          <td>$600</td>
+          <td><button >
+            <img src="../img/cart.png" width="15px" height="15px" >
+        </button></td>
+        </tr>
+        <tr>
+          <td><img src="../img/Picture5.jpg" width="100px" height="100px" ></td>
+          <td>ASUS ROG X570 Crosshair VIII Formula AM4 Zen 3 Ryzen 5000 & 3rd Gen Ryzen ATX Motherboard with PCIe 4.0, on-Board WiFi 6 (802.11Ax), 5 Gbps LAN</td>
+          <td>$900</td>
+          <td><button >
+            <img src="../img/cart.png" width="15px" height="15px" >
+        </button></td>
+        </tr>
+        <tr>
+          <td><img src="../img/Picture6.jpg" width="100px" height="100px" ></td>
+          <td>MSI MEG X570 GODLIKE Motherboard (AMD AM4, PCIe 4.0, DDR4, SATA 6Gb/s, Triple M.2, USB 3.2, AX Wi-Fi 6, 10G Super LAN, Extended-ATX) </td>
+          <td>$1600</td>
+          <td><button >
+            <img src="../img/cart.png" width="15px" height="15px" >
+        </button></td>
+        </tr>
+        <tr>
+          <td><img src="../img/Picture7.jpg" width="100px" height="100px" ></td>
+          <td>GIGABYTE X570 AORUS Xtreme (AMD Ryzen 5000/X570/E-ATX/PCIe4.0/DDR4/Aqantia 10GbE LAN/RGB Fusion 2.0/Fins-Array Heatsink/3xM.2 Thermal Guard/USB3.1/Gaming Motherboard)</td>
+          <td>$1000</td>
+          <td><button >
+            <img src="../mg/cart.png" width="15px" height="15px" >
+        </button></td>
+        </tr>
+        <tr>
+          <td><img src="../img/Picture8.jpg" width="100px" height="100px" ></td>
+          <td>ASUS TUF Gaming NVIDIA GeForce RTX 3090 OC Edition Graphics Card- PCIe 4.0, 24GB GDDR6X, HDMI 2.1, DisplayPort 1.4a, Dual Ball Fan Bearings</td>
+          <td>$4500</td>
+          <td><button >
+            <img src="../img/cart.png" width="15px" height="15px" >
+        </button></td>
+        </tr>
+        <tr>
+          <td><img src="../img/Picture9.jpg" width="100px" height="100px" ></td>
+          <td>MSI Gaming GeForce RTX 3090 24GB GDRR6X 384-Bit HDMI/DP Nvlink Tri-Frozr 2 Ampere Architecture OC Graphics Card (RTX 3090 GAMING X TRIO 24G)</td>
+          <td>$1000</td>
+          <td><button >
+            <img src="../img/cart.png" width="15px" height="15px" >
+        </button></td>
+        </tr>
+        <tr>
+          <td><img src="../img/Picture10.jpg" width="100px" height="100px" ></td>
+          <td>Gigabyte AORUS GeForce RTX 3090 XTREME WATERFORCE 24GB Graphics Card</td>
+          <td>$1000</td>
+          <td><button >
+            <img src="../img/cart.png" width="15px" height="15px" >
+        </button></td>
+        </tr>
+      </table>
+      <script src='../js/jquery.min.js'></script>
+    <script src='../js/viewItems.js'></script>
+
+  
+    
+        </div>
+    </section>
+    <footer id="footer">
+        <div id="footer-flex">
+        <div id="contact-flex" id="obj-cont">
+            <div id="img-cont">
+        <img src="../img/phone-call.png" id="phonecall" width="15px" height="15px"><p>Phone:+65 12345678</p><br>
+    </div>
+    <div id="img-cont">
+        <img src="../img/pin.png" id="pin" width="15px" height="15px"><p>location:xxxxxxxx</p><br>
+    </div>
+    <div id="img-cont">
+        <img src="../img/Mail.png" id="mail" width="15px" height="15px"><p>mail:IT_Hardware@gmail.com</p><br>
+        </div>
+    </div>
+
+    <div id="copyright" id="obj-cont">
+        <p>© Copyright 2021. All rights reserved to ITHardware.</p>
+    </div>
+
+    <div id="service" id="obj-cont">
+        <p><u>Customer Service</u></p>
+        <div id="service-cont">
+        <p>Contact Us</p><br>
+        </div>
+        <div id="service-cont">
+        <p>Help and advice</p><br>
+        </div>
+        <div id="service-cont">
+        <p>Return Policy</p><br>
+    </div>
+        <div id="service-cont">
+        <p>Terms and condition</p>
+    </div>
+    </div>
+</div>
+    </footer>
+</body>
+
+</html>

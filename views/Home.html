@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IT Hardware</title>
+    <style>
+        body {
+            background-color: white;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+
+        ul {
+            text-align: center;
+            list-style-type: none;
+            margin: 0;
+            padding-top: 30px;
+            overflow: hidden;
+            background-color:darkcyan;
+            height: 80px;
+            width: 100%;
+            padding-right: 50px;
+
+        }
+
+        li {
+            float: left;
+            color: darkgoldenrod;
+            margin-left: 100px;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: transparent;
+            color: #CCAE93;
+        }
+
+        #banner {
+            background-color:white;
+            /*             width: 500%;*/
+        }
+
+        #bannerlogo {
+            text-align: center;
+            padding: 40px 515px;
+            padding-left: 250px;
+        }
+
+        #case {
+            background-color: #F1EAE8;
+            padding: 16px;
+        }
+
+        #case h2,
+        p {
+            padding-left: 175px;
+            width: 70%;
+            color: #534745;
+        }
+
+        #features {
+            padding: 16px;
+            padding-left: 200px;
+            color: #534745;
+        }
+
+        #footer {
+            background-color: darkcyan;
+            margin-top: 10px;
+            padding: 10px;
+        }
+        #footer p{
+           color: white;
+        }
+
+        #contact {
+            margin: 0;
+            overflow: hidden;
+            background-color: darkcyan;
+            /* height: 60px; */
+            width: 100%;
+            color: #CCAE93;
+             padding-left: 10px; 
+
+        }
+     #copyright {
+            margin: 0;
+            overflow: hidden;
+            background-color: darkcyan;
+            /* height: 60px; */
+            width: 100%;
+            color: #CCAE93;
+            padding-top: 100px;
+            padding-left: 150px;
+        }
+        /* #service h4{
+            margin: 0;
+            overflow: hidden;
+            background-color: darkcyan;
+            /* height: 60px; */
+            /* color: #CCAE93;
+            padding-left: 150px; 
+        } */
+        #service {
+            margin: 0;
+            overflow: hidden;
+            background-color: darkcyan;
+            /* height: 60px; */
+            color: #CCAE93;
+            padding-right: 150px; 
+        }
+     
+        #footer-flex {
+            display: flex;
+        }
+
+        #footer obj-cont {
+            flex: 1;
+        }
+        /* #contact-flex {
+            display: flex;
+        } */
+          #contact-flex p {
+            padding-bottom: 10px;
+            padding-left: 20px;
+        }
+        #footer img-cont {
+            flex:1;
+        }
+     
+
+    /*DROPDOWN LINKS*/
+    .dropbtn {
+  background-color: darkcyan;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav id="nav">
+            <ul>
+                 <!-- <li>
+                    <a href="Home.html" title="Home">Home</a>
+                </li> -->
+                <li>
+                    <a href="Home.html" title="Home">Home</a>
+                </li>
+                <li >
+                    <a href="About.html" title="About">About</a>
+                </li>
+                <!-- <li class="dropdown">
+                    <a href="Items.html" class="dropbtn"  title="Items">Items</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                      </div>
+                </li> -->
+                <li>
+                    <a href="Items.html" title="Items">Items</a>
+                </li>
+                
+                <li>
+                    <a href="Contact.html" title="Contact">Contact</a>
+                </li>
+                <li>
+                    <a href="Login.html" title="Login">Login</a>
+                </li>
+                <li>
+                    <a href="Register.html" title="Register">Register</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div id="banner">
+            <img src="../img/Logo.jpeg" width="800px" height="250px" id="bannerlogo" alt="bannerlogo">
+
+        </div>
+    
+        <div id="features">
+            <h2>Features</h2>
+            <img src="../img/Picture1.jpg" id="Picture1" width="200px" height="200px">
+            <img src="../img/Picture1.jpg" id="Picture1" width="200px" height="200px">
+        </div>
+    </section>
+    <footer id="footer">
+        <div id="footer-flex">
+        <div id="contact-flex" id="obj-cont">
+            <div id="img-cont">
+        <img src="../img/phone-call.png" id="phonecall" width="15px" height="15px"><p>Phone:+65 12345678</p><br>
+    </div>
+    <div id="img-cont">
+        <img src="../img/pin.png" id="pin" width="15px" height="15px"><p>location:xxxxxxxx</p><br>
+    </div>
+    <div id="img-cont">
+        <img src="../img/Mail.png" id="mail" width="15px" height="15px"><p>mail:IT_Hardware@gmail.com</p><br>
+        </div>
+    </div>
+
+    <div id="copyright" id="obj-cont">
+        <p>© Copyright 2021. All rights reserved to ITHardware.</p>
+    </div>
+
+    <div id="service" id="obj-cont">
+        <p><u>Customer Service</u></p>
+        <div id="service-cont">
+        <p>Contact Us</p><br>
+        </div>
+        <div id="service-cont">
+        <p>Help and advice</p><br>
+        </div>
+        <div id="service-cont">
+        <p>Return Policy</p><br>
+    </div>
+        <div id="service-cont">
+        <p>Terms and condition</p>
+    </div>
+    </div>
+</div>
+    </footer>
+</body>
+
+</html>

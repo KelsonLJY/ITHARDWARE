@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IT Hardware</title>
+    <style>
+        body {
+            background-color: white;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+
+        ul {
+            text-align: center;
+            list-style-type: none;
+            margin: 0;
+            padding-top: 30px;
+            overflow: hidden;
+            background-color:darkcyan;
+            height: 80px;
+            width: 100%;
+            padding-right: 50px;
+
+        }
+
+        li {
+            float: left;
+            color: darkgoldenrod;
+            margin-left: 100px;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: transparent;
+            color: #CCAE93;
+        }
+
+        #banner {
+            background-color:white;
+            /*             width: 500%;*/
+        }
+
+        #bannerlogo {
+            text-align: center;
+            padding: 40px 515px;
+        }
+
+        #case {
+            background-color: #F1EAE8;
+            padding: 16px;
+        }
+        #contactdetails{
+            padding: 20px;
+            padding-bottom: 100px;
+        }
+
+        #contactus h1 {
+            padding-left: 500px;
+            width: 70%;
+            color: #534745;
+        }
+        #ViewAcct{
+            padding-left: 500px;
+            width: 70%;
+            color: #534745;
+
+        }
+        #About {
+            /* background-color: #F1EAE8; */
+            padding: 16px;
+        }
+
+        #About h2,
+        p {
+            padding-left: 175px;
+            width: 70%;
+            color: #534745;
+        }
+
+        #footer {
+            background-color: darkcyan;
+            margin-top: 10px;
+            padding: 10px;
+        }
+        #footer p{
+           color: white;
+        }
+
+        #contact {
+            margin: 0;
+            overflow: hidden;
+            background-color: darkcyan;
+            /* height: 60px; */
+            width: 100%;
+            color: #CCAE93;
+             padding-left: 10px; 
+
+        }
+     #copyright {
+            margin: 0;
+            overflow: hidden;
+            background-color: darkcyan;
+            /* height: 60px; */
+            width: 100%;
+            color: #CCAE93;
+            padding-top: 100px;
+            padding-left: 150px;
+        }
+        /* #service h4{
+            margin: 0;
+            overflow: hidden;
+            background-color: darkcyan;
+            /* height: 60px; */
+            /* color: #CCAE93;
+            padding-left: 150px; 
+        } */
+        #service {
+            margin: 0;
+            overflow: hidden;
+            background-color: darkcyan;
+            /* height: 60px; */
+            color: #CCAE93;
+            padding-right: 150px; 
+        }
+     
+        #footer-flex {
+            display: flex;
+        }
+        #contactinfo {
+            display: flex;
+        }
+
+        #footer obj-cont {
+            flex: 1;
+        }
+        /* #contact-flex {
+            display: flex;
+        } */
+          #contact-flex p {
+            padding-bottom: 10px;
+            padding-left: 20px;
+        }
+        #footer img-cont {
+            flex:1;
+        }
+     
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <nav id="nav">
+            <ul>
+                 <!-- <li>
+                    <a href="Home.html" title="Home">Home</a>
+                </li> -->
+                <li>
+                    <a href="Home.html" title="Home">Home</a>
+                </li>
+                <li>
+                    <a href="About.html" title="About">About</a>
+                </li>
+                <li>
+                    <a href="Items.html" title="Items">Items</a>
+                </li>
+                <li>
+                    <a href="Contact.html" title="Contact">Contact</a>
+                </li>
+                <li>
+                    <a href="Login.html" title="Login">Login</a>
+                </li>
+                <li>
+                    <a href="Register.html" title="Register">Register</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="ViewAcct">
+        <h1>Your Account</h1>
+        <form  >
+            <label for="email">Your Email:</label>
+            <input type="text" id="email" name="email"><br><br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location"><br><br>
+           
+        </form>
+        <a href="../views/Register.html"><input type="submit" value="Edit"></a><br>
+        <input type="submit" value="Save">
+    </section>
+
+    <footer id="footer">
+        <div id="footer-flex">
+        <div id="contact-flex" id="obj-cont">
+            <div id="img-cont">
+        <img src="../img/phone-call.png" id="phonecall" width="15px" height="15px"><p>Phone:+65 12345678</p><br>
+    </div>
+    <div id="img-cont">
+        <img src="../img/pin.png" id="pin" width="15px" height="15px"><p>location:xxxxxxxx</p><br>
+    </div>
+    <div id="img-cont">
+        <img src="../img/Mail.png" id="mail" width="15px" height="15px"><p>mail:IT_Hardware@gmail.com</p><br>
+        </div>
+    </div>
+
+    <div id="copyright" id="obj-cont">
+        <p>© Copyright 2021. All rights reserved to ITHardware.</p>
+    </div>
+
+    <div id="service" id="obj-cont">
+        <p><u>Customer Service</u></p>
+        <div id="service-cont">
+        <p>Contact Us</p><br>
+        </div>
+        <div id="service-cont">
+        <p>Help and advice</p><br>
+        </div>
+        <div id="service-cont">
+        <p>Return Policy</p><br>
+    </div>
+        <div id="service-cont">
+        <p>Terms and condition</p>
+    </div>
+    </div>
+</div>
+    </footer>
+</body>
+
+</html>
