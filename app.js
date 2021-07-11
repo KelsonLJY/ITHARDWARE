@@ -10,9 +10,10 @@ dotenv.config({ path: './app.env' })
 /**
  * Connect To the database
  */
-mongoose.connect("mongodb+srv://amydev:Amy123!*@cluster0.ogfnn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
+mongoose.connect("mongodb+srv://amydev:Amy123!*@cluster0.ogfnn.mongodb.net/it_hardware?retryWrites=true&w=majority",{
     useNewUrlParser:true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex : true
 });
 
 // Middleware
@@ -22,6 +23,7 @@ app.use(express.static('public'))
 app.set('view engine','ejs');
 
 app.use(require("./routes/index"))
+app.use(require("./routes/user"))
 
 
 app.listen(port, function () {
