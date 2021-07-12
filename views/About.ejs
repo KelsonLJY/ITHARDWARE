@@ -59,21 +59,12 @@
             background-color: #F1EAE8;
             padding: 16px;
         }
-        #contactdetails{
-            padding: 20px;
-            padding-bottom: 100px;
-        }
 
-        #contactus h1 {
-            padding-left: 500px;
+        #case h2,
+        p {
+            padding-left: 175px;
             width: 70%;
             color: #534745;
-        }
-        #registerform{
-            padding-left: 500px;
-            width: 70%;
-            color: #534745;
-
         }
         #About {
             /* background-color: #F1EAE8; */
@@ -95,7 +86,6 @@
         #footer p{
            color: white;
         }
-        
 
         #contact {
             margin: 0;
@@ -137,9 +127,6 @@
         #footer-flex {
             display: flex;
         }
-        #contactinfo {
-            display: flex;
-        }
 
         #footer obj-cont {
             flex: 1;
@@ -154,6 +141,7 @@
         #footer img-cont {
             flex:1;
         }
+      
      
     </style>
 
@@ -168,49 +156,45 @@
                     <a href="Home.html" title="Home">Home</a>
                 </li> -->
                 <li>
-                    <a href="Home.html" title="Home">Home</a>
+                    <a href="/Home.ejs" title="Home">Home</a>
+                </li>
+                <li >
+                    <a href="/About.ejs" title="About">About</a>
+                </li>
+                <!-- <li class="dropdown">
+                    <a href="Items.html" class="dropbtn"  title="Items">Items</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                      </div>
+                </li> -->
+                <li>
+                    <a href="/Items.ejs" title="Items">Items</a>
+                </li>
+                
+                <li>
+                    <a href="/Contact.ejs" title="Contact">Contact</a>
                 </li>
                 <li>
-                    <a href="About.html" title="About">About</a>
+                    <a href="/login" title="Login">Login</a>
                 </li>
                 <li>
-                    <a href="Items.html" title="Items">Items</a>
-                </li>
-                <li>
-                    <a href="Contact.html" title="Contact">Contact</a>
-                </li>
-                <li>
-                    <a href="Login.html" title="Login">Login</a>
-                </li>
-                <li>
-                    <a href="Register.html" title="Register">Register</a>
+                    <a href="/register" title="Register">Register</a>
                 </li>
             </ul>
         </nav>
     </header>
+    <section>
     
-    <section id="registerform">
-        <h1>Register</h1>
-        <form  action="user/register" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br><br>
-            <label for="dob">DOB:</label>
-            <input type="dob" id="dob" name="dob"><br><br>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username"><br><br>
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email"><br><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password"><br><br>
-            <label for="confirmpass">Confirm Password:</label>
-            <input type="password" id="confirmpass" name="confirmpass"><br><br>
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location"><br><br>
-            <input type="submit" value="Register Now">
-           
-        </form>
-    </section>
+    
+        <div id="About">
+            <h2>About</h2>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 
+            </p><br>
+        </div>
+    </section>
     <footer id="footer">
         <div id="footer-flex">
         <div id="contact-flex" id="obj-cont">

@@ -53,37 +53,24 @@
         #bannerlogo {
             text-align: center;
             padding: 40px 515px;
+            padding-left: 250px;
         }
 
         #case {
             background-color: #F1EAE8;
             padding: 16px;
         }
-        #contactdetails{
-            padding: 20px;
-            padding-bottom: 100px;
-        }
 
-        #contactus h1 {
-            padding-left: 500px;
-            width: 70%;
-            color: #534745;
-        }
-        #registerform{
-            padding-left: 500px;
-            width: 70%;
-            color: #534745;
-
-        }
-        #About {
-            /* background-color: #F1EAE8; */
-            padding: 16px;
-        }
-
-        #About h2,
+        #case h2,
         p {
             padding-left: 175px;
             width: 70%;
+            color: #534745;
+        }
+
+        #features {
+            padding: 16px;
+            padding-left: 200px;
             color: #534745;
         }
 
@@ -95,7 +82,6 @@
         #footer p{
            color: white;
         }
-        
 
         #contact {
             margin: 0;
@@ -137,9 +123,6 @@
         #footer-flex {
             display: flex;
         }
-        #contactinfo {
-            display: flex;
-        }
 
         #footer obj-cont {
             flex: 1;
@@ -155,8 +138,43 @@
             flex:1;
         }
      
-    </style>
 
+    /*DROPDOWN LINKS*/
+    .dropbtn {
+  background-color: darkcyan;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+    </style>
 
 </head>
 
@@ -168,49 +186,47 @@
                     <a href="Home.html" title="Home">Home</a>
                 </li> -->
                 <li>
-                    <a href="Home.html" title="Home">Home</a>
+                    <a href="/Home.ejs" title="Home">Home</a>
+                </li>
+                <li >
+                    <a href="/About.ejs" title="About">About</a>
+                </li>
+                <!-- <li class="dropdown">
+                    <a href="Items.html" class="dropbtn"  title="Items">Items</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                      </div>
+                </li> -->
+                <li>
+                    <a href="/Items.ejs" title="Items">Items</a>
+                </li>
+                
+                <li>
+                    <a href="/Contact.ejs" title="Contact">Contact</a>
                 </li>
                 <li>
-                    <a href="About.html" title="About">About</a>
+                    <a href="/login" title="Login">Login</a>
                 </li>
                 <li>
-                    <a href="Items.html" title="Items">Items</a>
-                </li>
-                <li>
-                    <a href="Contact.html" title="Contact">Contact</a>
-                </li>
-                <li>
-                    <a href="Login.html" title="Login">Login</a>
-                </li>
-                <li>
-                    <a href="Register.html" title="Register">Register</a>
+                    <a href="/register" title="Register">Register</a>
                 </li>
             </ul>
         </nav>
     </header>
-    
-    <section id="registerform">
-        <h1>Register</h1>
-        <form  action="user/register" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br><br>
-            <label for="dob">DOB:</label>
-            <input type="dob" id="dob" name="dob"><br><br>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username"><br><br>
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email"><br><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password"><br><br>
-            <label for="confirmpass">Confirm Password:</label>
-            <input type="password" id="confirmpass" name="confirmpass"><br><br>
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location"><br><br>
-            <input type="submit" value="Register Now">
-           
-        </form>
-    </section>
+    <section>
+        <div id="banner">
+            <img src="../views/img/Logo.jpeg" width="800px" height="250px" id="bannerlogo" alt="bannerlogo">
 
+        </div>
+    
+        <div id="features">
+            <h2>Features</h2>
+            <img src="../img/Picture1.jpg" id="Picture1" width="200px" height="200px">
+            <img src="../img/Picture1.jpg" id="Picture1" width="200px" height="200px">
+        </div>
+    </section>
     <footer id="footer">
         <div id="footer-flex">
         <div id="contact-flex" id="obj-cont">

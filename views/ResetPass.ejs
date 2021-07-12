@@ -69,8 +69,14 @@
             width: 70%;
             color: #534745;
         }
-        #registerform{
+        #ForgetPass{
             padding-left: 500px;
+            width: 70%;
+            color: #534745;
+
+        }
+        #ForgetPass p{
+            padding-left: 10px;
             width: 70%;
             color: #534745;
 
@@ -95,7 +101,6 @@
         #footer p{
            color: white;
         }
-        
 
         #contact {
             margin: 0;
@@ -168,47 +173,49 @@
                     <a href="Home.html" title="Home">Home</a>
                 </li> -->
                 <li>
-                    <a href="Home.html" title="Home">Home</a>
+                    <a href="/Home.ejs" title="Home">Home</a>
+                </li>
+                <li >
+                    <a href="/About.ejs" title="About">About</a>
+                </li>
+                <!-- <li class="dropdown">
+                    <a href="Items.html" class="dropbtn"  title="Items">Items</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                      </div>
+                </li> -->
+                <li>
+                    <a href="/Items.ejs" title="Items">Items</a>
+                </li>
+                
+                <li>
+                    <a href="/Contact.ejs" title="Contact">Contact</a>
                 </li>
                 <li>
-                    <a href="About.html" title="About">About</a>
+                    <a href="/login" title="Login">Login</a>
                 </li>
                 <li>
-                    <a href="Items.html" title="Items">Items</a>
-                </li>
-                <li>
-                    <a href="Contact.html" title="Contact">Contact</a>
-                </li>
-                <li>
-                    <a href="Login.html" title="Login">Login</a>
-                </li>
-                <li>
-                    <a href="Register.html" title="Register">Register</a>
+                    <a href="/register" title="Register">Register</a>
                 </li>
             </ul>
         </nav>
     </header>
     
-    <section id="registerform">
-        <h1>Register</h1>
-        <form  action="user/register" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br><br>
-            <label for="dob">DOB:</label>
-            <input type="dob" id="dob" name="dob"><br><br>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username"><br><br>
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email"><br><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password"><br><br>
-            <label for="confirmpass">Confirm Password:</label>
-            <input type="password" id="confirmpass" name="confirmpass"><br><br>
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location"><br><br>
-            <input type="submit" value="Register Now">
+    <section id="ForgetPass">
+        <h1>Forget Password</h1>
+        
+            <form  >
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email"><br><br>
+                <label for="dob">DOB:</label>
+                <input type="text" id="dob" name="dob"><br><br>
+                <input type="submit" value="Reset">
+               
+            </form>
            
-        </form>
+        <p>Check the link sent to your email</p>
     </section>
 
     <footer id="footer">
