@@ -1,97 +1,251 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>IT Hardware</title>
+    <style>
+        body {
+            background-color: white;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
-    
+        ul {
+            text-align: center;
+            list-style-type: none;
+            margin: 0;
+            padding-top: 30px;
+            overflow: hidden;
+            background-color:darkcyan;
+            height: 80px;
+            width: 100%;
+            padding-right: 50px;
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        }
 
-    <title>Laravel</title>
+        li {
+            float: left;
+            color: darkgoldenrod;
+            margin-left: 100px;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: transparent;
+            color: #CCAE93;
+        }
+
+        #banner {
+            background-color:white;
+            /*             width: 500%;*/
+        }
+
+        #bannerlogo {
+            text-align: center;
+            padding: 40px 515px;
+        }
+
+        #case {
+            background-color: #F1EAE8;
+            padding: 16px;
+        }
+        #contactdetails{
+            padding: 20px;
+            padding-bottom: 100px;
+        }
+
+        #contactus h1 {
+            padding-left: 500px;
+            width: 70%;
+            color: #534745;
+        }
+        #loginform{
+            padding-left: 500px;
+            width: 70%;
+            color: #534745;
+
+        }
+        #About {
+            /* background-color: #F1EAE8; */
+            padding: 16px;
+        }
+
+        #About h2,
+        p {
+            padding-left: 175px;
+            width: 70%;
+            color: #534745;
+        }
+
+        #footer {
+            background-color: darkcyan;
+            margin-top: 10px;
+            padding: 10px;
+        }
+        #footer p{
+           color: white;
+        }
+
+        #contact {
+            margin: 0;
+            overflow: hidden;
+            background-color: darkcyan;
+            /* height: 60px; */
+            width: 100%;
+            color: #CCAE93;
+             padding-left: 10px; 
+
+        }
+     #copyright {
+            margin: 0;
+            overflow: hidden;
+            background-color: darkcyan;
+            /* height: 60px; */
+            width: 100%;
+            color: #CCAE93;
+            padding-top: 100px;
+            padding-left: 150px;
+        }
+        /* #service h4{
+            margin: 0;
+            overflow: hidden;
+            background-color: darkcyan;
+            /* height: 60px; */
+            /* color: #CCAE93;
+            padding-left: 150px; 
+        } */
+        #service {
+            margin: 0;
+            overflow: hidden;
+            background-color: darkcyan;
+            /* height: 60px; */
+            color: #CCAE93;
+            padding-right: 150px; 
+        }
+     
+        #footer-flex {
+            display: flex;
+        }
+        #contactinfo {
+            display: flex;
+        }
+
+        #footer obj-cont {
+            flex: 1;
+        }
+        /* #contact-flex {
+            display: flex;
+        } */
+          #contact-flex p {
+            padding-bottom: 10px;
+            padding-left: 20px;
+        }
+        #footer img-cont {
+            flex:1;
+        }
+     
+    </style>
+
+
 </head>
+
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
-    <div class="container">
-        <a class="navbar-brand" href="#">ITHardware</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+    <header>
+        <nav id="nav">
+            <ul>
+                 <!-- <li>
+                    <a href="Home.html" title="Home">Home</a>
+                </li> -->
+                <li>
+                    <a href="/Home.ejs" title="Home">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
+                <li >
+                    <a href="/About.ejs" title="About">About</a>
+                </li>
+                <!-- <li class="dropdown">
+                    <a href="Items.html" class="dropbtn"  title="Items">Items</a>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                      </div>
+                </li> -->
+                <li>
+                    <a href="/Items.ejs" title="Items">Items</a>
+                </li>
+                
+                <li>
+                    <a href="/Contact.ejs" title="Contact">Contact</a>
+                </li>
+                <li>
+                    <a href="/login" title="Login">Login</a>
+                </li>
+                <li>
+                    <a href="/register" title="Register">Register</a>
                 </li>
             </ul>
+        </nav>
+    </header>
+    
+    <section id="loginform">
+        <h1>Login</h1>
+        <form  onsubmit="return login();" >
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Login">
+           
+        </form>
+        <a href="../views/Register.html"><input type="submit" value="Register"></a><br>
+        <a href="../views/ResetPass.html"><input type="submit" value="Forget Password?"></a>
+    </section>
 
+    <footer id="footer">
+        <div id="footer-flex">
+        <div id="contact-flex" id="obj-cont">
+            <div id="img-cont">
+        <img src="../img/phone-call.png" id="phonecall" width="15px" height="15px"><p>Phone:+65 12345678</p><br>
+    </div>
+    <div id="img-cont">
+        <img src="../img/pin.png" id="pin" width="15px" height="15px"><p>location:xxxxxxxx</p><br>
+    </div>
+    <div id="img-cont">
+        <img src="../img/Mail.png" id="mail" width="15px" height="15px"><p>mail:IT_Hardware@gmail.com</p><br>
         </div>
     </div>
-</nav>
 
-<main class="login-form">
-    <div class="cotainer" id="app">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Register</div>
-                    <div class="card-body">
-                        <form action="" method="">
-                            <div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
-                                <div class="col-md-6">
-                                    <input type="text" id="email_address" class="form-control" name="email-address" required autofocus>
-                                </div>
-                            </div>
+    <div id="copyright" id="obj-cont">
+        <p>© Copyright 2021. All rights reserved to ITHardware.</p>
+    </div>
 
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-                                <div class="col-md-6">
-                                    <input type="password" id="password" class="form-control" name="password" required>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary" @click.prevent="login">
-                                    {{message}}
-                                </button>
-                            </div>
-                    </div>
-                    </form>
-                </div>
-            </div>
+    <div id="service" id="obj-cont">
+        <p><u>Customer Service</u></p>
+        <div id="service-cont">
+        <p>Contact Us</p><br>
         </div>
+        <div id="service-cont">
+        <p>Help and advice</p><br>
+        </div>
+        <div id="service-cont">
+        <p>Return Policy</p><br>
+    </div>
+        <div id="service-cont">
+        <p>Terms and condition</p>
     </div>
     </div>
-</main>
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-<script>
-var myObject = new Vue({
-    el: '#app',
-    data: {message: 'Hello Vue!'},
-    methods:{
-        login(){
-            axios.get('/api/test',{
-                
-            }).then(({data}) => {
-
-            }).catch(error => {
-
-            })
-        }
-    }
-})
-</script>
+</div>
+    </footer>
 </body>
+
 </html>
