@@ -188,7 +188,9 @@
         </div>
         <form id="app">
             <label for="email">Email:</label>
-            <input type="text" id="email" name="email" v-model="user.email"><br><br>
+            <input type="text" id="email" name="email" v-model="user.email" v-validate="'required'"><br><br>
+            <span style="color:red;" v-if="errors.has('email')">{{ errors.first('email') }}</span><br>
+
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" v-model="user.password"><br><br>
             <input type="submit" value="Login"  @click.prevent="login">
@@ -235,40 +237,34 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vee-validate@<3.0.0/dist/vee-validate.js"></script>
+
     <script>
+    Vue.use(VeeValidate);
     var myObject = new Vue({
         el: '#app',
         data: {
             message: null,
             
             user : {
-                email : 'amy@gmail.com',
-                password : 'pass'
+                email :  null,
+                password : null
             }
         },
-        methods:{
-            doLogout(){
-           
-                    axios.get('/api/logout').then(({data}) => {
-
-                    }).catch(error => {
-
-                    })
-            },
-            getProtectedRoute(){
-                axios.get('/api/protected-route').then(({data}) => {
-                  
-                }).catch(error => {
-
-                })
-            },
+        methods:{           
             login(){
-                axios.post('/api/login', this.user).then(({data}) => {
-                    console.log(window.location)
-                    window.location.href = window.location.origin;
-                }).catch(error => {
-                    this.message = error.response.data.message;
+                this.$validator.validateAll().then(success => {
+                    if(success){
+                        axios.post('/api/login', this.user).then(({data}) => {
+                            console.log(window.location)
+                            window.location.href = window.location.origin;
+                        }).catch(error => {
+                            this.message = error.response.data.message;
+                        })
+                    }
+                    
                 })
+                
             }
         }
     })
