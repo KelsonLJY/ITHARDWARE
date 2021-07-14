@@ -59,7 +59,7 @@
             width: 70%;
             color: #534745;
         }
-        #loginform{
+        .loginform{
             padding-left: 500px;
             width: 70%;
             color: #534745;
@@ -143,7 +143,7 @@
 
 </head>
 
-<body>
+<body >
     <header>
         <nav id="nav">
             <ul>
@@ -181,17 +181,20 @@
         </nav>
     </header>
     
-    <section id="loginform">
+    <section class="loginform" id="app">
         <h1>Login</h1>
-        <form  onsubmit="return login();" >
+        <div style="height:50px;background-color:#F8D7DA;width:500px !important;margin-bottom:5px;" v-if="message">
+            <p  style="color:black;margin-top:5px;">{{message}}</p>
+        </div>
+        <form id="app">
             <label for="email">Email:</label>
-            <input type="text" id="email" name="email"><br><br>
+            <input type="text" id="email" name="email" v-model="user.email"><br><br>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password"><br><br>
-            <input type="submit" value="Login">
+            <input type="password" id="password" name="password" v-model="user.password"><br><br>
+            <input type="submit" value="Login"  @click.prevent="login">
            
         </form>
-        <a href="../views/Register.html"><input type="submit" value="Register"></a><br>
+        <a href="/register"><input type="submit" value="Register"></a><br>
         <a href="../views/ResetPass.html"><input type="submit" value="Forget Password?"></a>
     </section>
 
@@ -230,6 +233,46 @@
     </div>
 </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script>
+    var myObject = new Vue({
+        el: '#app',
+        data: {
+            message: null,
+            
+            user : {
+                email : 'amy@gmail.com',
+                password : 'pass'
+            }
+        },
+        methods:{
+            doLogout(){
+           
+                    axios.get('/api/logout').then(({data}) => {
+
+                    }).catch(error => {
+
+                    })
+            },
+            getProtectedRoute(){
+                axios.get('/api/protected-route').then(({data}) => {
+                  
+                }).catch(error => {
+
+                })
+            },
+            login(){
+                axios.post('/api/login', this.user).then(({data}) => {
+                    console.log(window.location)
+                    window.location.href = window.location.origin;
+                }).catch(error => {
+                    this.message = error.response.data.message;
+                })
+            }
+        }
+    })
+    </script>
 </body>
 
 </html>
