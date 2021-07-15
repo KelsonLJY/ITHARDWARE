@@ -18,6 +18,9 @@ router.get('/Items.ejs' ,(req, res) => {
 router.get('/Contact.ejs' ,(req, res) => {
     res.render('Contact')
 })
+router.get('/ViewAcct.ejs' ,(req, res) => {
+    res.render('ViewAcct')
+})
 router.get('/login' ,(req, res) => {
     res.render('login')
 })
@@ -25,6 +28,19 @@ router.get('/login' ,(req, res) => {
 router.get('/register' ,(req, res) => {
     res.render('register')
 })
-
+router.post('/login', (req, res) => {
+    req.session.loggedin = true
+})
+router.get('/logout', (req, res) => {
+    req.logout();
+    req.session.destroy();
+    res.redirect('/');
+})
+//get and display user in viewacct
+router.get('/users', function (req, res) {
+    db.getAllUsers(function (err, users) {
+        res.send(users);
+    })
+})
 
 module.exports=router;

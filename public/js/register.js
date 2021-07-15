@@ -15,6 +15,11 @@ var myObject = new Vue({
             full_name : null
         }
     },
+    //GET USER FROM DB TO DISPLAY IN VIEW ACCOUNT
+    getAllUsers: function (callback) {
+        UserSchema.find({}, callback);
+    },
+    
     methods:{           
         onClickedRegister(){
             this.$validator.validateAll().then(success => {
