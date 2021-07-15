@@ -22,10 +22,6 @@ const UserSchema=new mongoose.Schema({
         type:String,
         required: true,
     },
-    hp:{
-        type:String,
-        required: true,
-    },
     dob:{
         type:String,
         required: true,
@@ -35,5 +31,6 @@ const UserSchema=new mongoose.Schema({
         required:true
     }
 });
+
 
 module.exports=new mongoose.model("User",UserSchema);

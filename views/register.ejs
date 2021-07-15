@@ -2,6 +2,13 @@
 <html>
 
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
     <title>IT Hardware</title>
     <style>
         body {
@@ -69,7 +76,7 @@
             width: 70%;
             color: #534745;
         }
-        #registerform{
+        .registerform{
             padding-left: 500px;
             width: 70%;
             color: #534745;
@@ -161,91 +168,60 @@
 </head>
 
 <body>
-    <header>
-        <nav id="nav">
-            <ul>
-                 <!-- <li>
-                    <a href="Home.html" title="Home">Home</a>
-                </li> -->
-                <li>
-                    <a href="Home.html" title="Home">Home</a>
-                </li>
-                <li>
-                    <a href="About.html" title="About">About</a>
-                </li>
-                <li>
-                    <a href="Items.html" title="Items">Items</a>
-                </li>
-                <li>
-                    <a href="Contact.html" title="Contact">Contact</a>
-                </li>
-                <li>
-                    <a href="Login.html" title="Login">Login</a>
-                </li>
-                <li>
-                    <a href="Register.html" title="Register">Register</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <%- include('./partials/head'); %>
     
-    <section id="registerform">
+    <section class="registerform" id="app">
         <h1>Register</h1>
+        <div class="alert alert-danger mb-10" v-if="message">{{message}}</div>
+
         <form  >
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br><br>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="full_name" v-model="user.full_name" v-validate="'required'">
+            <span v-show="errors.has('full_name')" class="txt-danger">{{ errors.first('full_name') }}</span>
+            <br><br>
+
             <label for="dob">DOB:</label>
-            <input type="text" id="dob" name="dob"><br><br>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username"><br><br>
+            <input type="date" id="dob" name="dob" v-model="user.dob" v-validate="'required'">
+            <span v-show="errors.has('dob')" class="txt-danger">{{ errors.first('dob') }}</span>
+            <br><br>
+
             <label for="email">Email:</label>
-            <input type="text" id="email" name="email"><br><br>
+            <input type="text" id="email" name="email" v-model="user.email" v-validate="'required'">
+            <span v-show="errors.has('email')" class="txt-danger">{{ errors.first('email') }}</span>
+            <br><br>
+
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password"><br><br>
+            <input type="password" id="password" name="password"  v-model="user.password" v-validate="'required'" ref="password">
+            <span v-show="errors.has('password')" class="txt-danger">{{ errors.first('password') }}</span>
+            <br><br>
+
             <label for="confirmpass">Confirm Password:</label>
-            <input type="password" id="confirmpass" name="confirmpass"><br><br>
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location"><br><br>
-            <input type="submit" value="Register Now">
-           
+            <input type="password" id="confirmpass" v-validate="'required|confirmed:password'" name="password_confirmation" v-model="user.confirm_password" v-validate="'required'" data-vv-as="password">
+            <span v-show="errors.has('password_confirmation')" class="txt-danger">{{ errors.first('password_confirmation') }}</span>
+            <br><br>
+
+            <label for="tel">Tel/HP:</label>
+            <input type="text" id="tel" name="tel" v-model="user.phone" v-validate="'required'">
+            <span v-show="errors.has('tel')" class="txt-danger">{{ errors.first('tel') }}</span>
+            <br><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" v-model="user.address" v-validate="'required'">
+            <span v-show="errors.has('address')" class="txt-danger">{{ errors.first('address') }}</span>
+            <br><br>
+
+            <label for="postal_code">Postal Code:</label>
+            <input type="text" id="postal_code" name="postal_code" v-validate="'required'" v-model="user.postal_code">
+            <span v-show="errors.has('postal_code')" class="txt-danger">{{ errors.first('postal_code') }}</span>
+            <br><br>
+
+            <input type="submit" value="Register Now" @click.prevent="onClickedRegister">
         </form>
     </section>
-
-    <footer id="footer">
-        <div id="footer-flex">
-        <div id="contact-flex" id="obj-cont">
-            <div id="img-cont">
-        <img src="../img/phone-call.png" id="phonecall" width="15px" height="15px"><p>Phone:+65 12345678</p><br>
-    </div>
-    <div id="img-cont">
-        <img src="../img/pin.png" id="pin" width="15px" height="15px"><p>location:xxxxxxxx</p><br>
-    </div>
-    <div id="img-cont">
-        <img src="../img/Mail.png" id="mail" width="15px" height="15px"><p>mail:IT_Hardware@gmail.com</p><br>
-        </div>
-    </div>
-
-    <div id="copyright" id="obj-cont">
-        <p>© Copyright 2021. All rights reserved to ITHardware.</p>
-    </div>
-
-    <div id="service" id="obj-cont">
-        <p><u>Customer Service</u></p>
-        <div id="service-cont">
-        <p>Contact Us</p><br>
-        </div>
-        <div id="service-cont">
-        <p>Help and advice</p><br>
-        </div>
-        <div id="service-cont">
-        <p>Return Policy</p><br>
-    </div>
-        <div id="service-cont">
-        <p>Terms and condition</p>
-    </div>
-    </div>
-</div>
-    </footer>
+    <%- include('./partials/footer'); %>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vee-validate@<3.0.0/dist/vee-validate.js"></script>
+    <script src="js/register.js"></script>
 </body>
-
 </html>
