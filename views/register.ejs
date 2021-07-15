@@ -186,7 +186,7 @@
             <br><br>
 
             <label for="email">Email:</label>
-            <input type="text" id="email" name="email" v-model="user.email" v-validate="'required'">
+            <input type="text" id="email" name="email" v-model="user.email" v-validate="'required|email'">
             <span v-show="errors.has('email')" class="txt-danger">{{ errors.first('email') }}</span>
             <br><br>
 

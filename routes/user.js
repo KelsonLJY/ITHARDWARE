@@ -8,7 +8,7 @@ router.post('/api/register',async (req,res)=>{
     const user=req.body;
     const salt = bcrypt.genSaltSync(15);
     const hash = bcrypt.hashSync(user.password, salt);
-    
+        
     const is_exists = await User.findOne({ email: user.email }).exec();
     if(is_exists){
         return res.status(422).send({
