@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 const passport = require('passport')
 const isAuth = require('../middleware/auth').isAuth;
 
-router.post('/api/register',async (req,res)=>{
+router.post('/user/register',async (req,res)=>{
     const user=req.body;
     const salt = bcrypt.genSaltSync(15);
     const hash = bcrypt.hashSync(user.password, salt);
@@ -26,17 +26,13 @@ router.post('/api/register',async (req,res)=>{
         postal_code : user.postal_code,
     })
     newUser.save().then(()=>{
-        res.send({
-            message : 'Successfully Saved.'
-        })
+        res.redirect('/')
     })
-    .catch( error=>{
-        console.log(error)
-        return res.status(500).send({
-            message : 'Error occurs while creating user.'
-        })
-    })
+    .catch(err=>console.log(err))
 })
+
+
+
 .get('/api/protected-route', isAuth, (req, res, next) => {
     res.send('You made it to the route.' +  req.user.full_name);
 })

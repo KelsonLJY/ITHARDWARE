@@ -29,13 +29,13 @@ app.use(require("./routes/user"))
 require("./config/passport")
 
 
-const authMiddleware = (req, res, next) => {
-  if (!req.isAuthenticated()) {
-      res.status(401).send('You are not authenticated')
-  } else {
-      return next()
-  }
-}
+// const authMiddleware = (req, res, next) => {
+//   if (!req.isAuthenticated()) {
+//       res.status(401).send('You are not authenticated')
+//   } else {
+//       return next()
+//   }
+// }
 
 app.listen(port, function () {
     console.log('Server started on port ' + port);
