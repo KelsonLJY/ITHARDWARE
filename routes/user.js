@@ -51,8 +51,10 @@ router.post('/user/register',async (req,res)=>{
                 message : 'Invalid email or password'
             })
         }
-        
+        // res.locals.user = req.session.user;
+
         req.login(user, (err) => {
+   
             res.send({
                 email : user.email,
                 full_name : user.full_name

@@ -22,26 +22,12 @@ app.use(express.urlencoded({extended:true}))
 app.set('view engine','ejs')
 app.use(passport.initialize())
 app.use(passport.session())
-
-
-
 app.use(express.static('public'))
 app.use(require("./routes/index"))
 app.use(require("./routes/user"))
-app.use(function (req, res, next) {
-  res.locals.session = req.session;
-  next();
-});
+
 require("./config/passport")
 
-
-// const authMiddleware = (req, res, next) => {
-//   if (!req.isAuthenticated()) {
-//       res.status(401).send('You are not authenticated')
-//   } else {
-//       return next()
-//   }
-// }
 
 app.listen(port, function () {
     console.log('Server started on port ' + port);
