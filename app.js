@@ -22,10 +22,16 @@ app.use(express.urlencoded({extended:true}))
 app.set('view engine','ejs')
 app.use(passport.initialize())
 app.use(passport.session())
+
+
+
 app.use(express.static('public'))
 app.use(require("./routes/index"))
 app.use(require("./routes/user"))
-
+app.use(function (req, res, next) {
+  res.locals.session = req.session;
+  next();
+});
 require("./config/passport")
 
 
