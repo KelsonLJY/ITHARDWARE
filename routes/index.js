@@ -1,5 +1,5 @@
 const router = require('express').Router()
-
+const User=require('../model/User')
 // router.get('/' ,(req, res) => {
 //     res.render('index')
 // })
@@ -37,10 +37,10 @@ router.get('/logout', (req, res) => {
     res.redirect('/');
 })
 //get and display user in viewacct
-router.get('/users', function (req, res) {
-    db.getAllUsers(function (err, users) {
-        res.send(users);
-    })
-})
+// router.get('/users', function (req, res) {
+//     db.getAllUsers(function (err, users) {
+//         res.send(users);
+//     })
+// })
 
 module.exports=router;

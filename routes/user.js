@@ -33,8 +33,9 @@ router.post('/user/register',async (req,res)=>{
 
 
 
-.get('/api/protected-route', isAuth, (req, res, next) => {
-    res.send('You made it to the route.' +  req.user.full_name);
+.get('/api/user-profile', isAuth, (req, res, next) => {
+    res.send(req.user);
+    // res.send('You made it to the route.' +  req.user.full_name);
 })
 .get('/api/logout', (req, res, next) => {
     req.logout();
