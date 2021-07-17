@@ -7,7 +7,12 @@ $(document).ready(function () {
             function (data) {
                 // console.log(data)
                 // data.forEach(function(users) {
-                    let url = `/edit-user?user_id=${data._id}`;
+
+                /**
+                 * Can pass parameter like this
+                 *  let url = `/edit-user?user_id=${data._id}`;
+                 */
+                    let url = `/edit-user`;
                     $(".accounts").append(`
                     <article>
                        <h2><a href="${url}">${data.full_name}</a></h2>

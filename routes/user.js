@@ -5,6 +5,9 @@ const passport = require('passport')
 const isAuth = require('../middleware/auth').isAuth;
 
 router
+.get('/api/user-editprofile', isAuth, (req, res, next) => {
+    res.send(req.user)
+})
 .post('/user/register',async (req,res)=>{
     const user=req.body;
     const salt = bcrypt.genSaltSync(15);

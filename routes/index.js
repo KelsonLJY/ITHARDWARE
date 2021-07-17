@@ -43,10 +43,7 @@ router.get('/logout', (req, res) => {
 router.get('/edit-user', isAuth, (req, res, next) => {
     res.render('EditAcct')
 })
-router.get('/api/user-editprofile', isAuth, (req, res, next) => {
-    
-    res.send(req.user)
-})
+
 //get and display user in viewacct
 // router.get('/users', function (req, res) {
 //     db.getAllUsers(function (err, users) {
