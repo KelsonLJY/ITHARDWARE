@@ -2,10 +2,10 @@ var userId = 0;
 //doc ready
 $(document).ready(function () {
     var urlParams = new URLSearchParams(window.location.search);
-    userId = urlParams.get('id');
+    userId = urlParams.get('user_id');
 
     $.ajax({
-        url: "/api/user-editprofile" + userId,
+        url: "/api/user-editprofile?user_id=" + userId,
         method: "get"
     }).done(
         function (data) {
@@ -23,9 +23,6 @@ $(document).ready(function () {
             console.log(err.responseText);
         }
     );
-    
-
-
 });
 
 //editevent anytime upon user interaction. form submission

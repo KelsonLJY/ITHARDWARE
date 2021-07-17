@@ -7,9 +7,10 @@ $(document).ready(function () {
             function (data) {
                 // console.log(data)
                 // data.forEach(function(users) {
+                    let url = `/edit-user?user_id=${data._id}`;
                     $(".accounts").append(`
                     <article>
-                       <h2><a href="/edit?data.id">${data.full_name}</a></h2>
+                       <h2><a href="${url}">${data.full_name}</a></h2>
                          <div>
                             dob: ${data.dob}<br>
                             email: ${data.email}<br>
