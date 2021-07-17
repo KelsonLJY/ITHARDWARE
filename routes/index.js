@@ -44,6 +44,25 @@ router.get('/edit-user', isAuth, (req, res, next) => {
     res.render('EditAcct')
 })
 
+var fs = require('fs');
+router.get('/api/get-items', isAuth, (req, res, next) => {
+    var items = [];
+    var user = req.user;
+   
+    fs.readFile("./collection/items.json", function(err, data) {
+        // Check for errors
+        if (err) throw err;
+        // Converting to JSON
+        items = JSON.parse(data);
+        res.send({
+            items : items,
+            user : user
+        })
+    });
+
+    
+})
+
 //get and display user in viewacct
 // router.get('/users', function (req, res) {
 //     db.getAllUsers(function (err, users) {

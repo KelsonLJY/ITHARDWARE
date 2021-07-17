@@ -1,0 +1,12 @@
+[
+        {"id" : 1, "name" :  "Intel Core i9-11900K", "descriptions" : "Intel Core i9-11900K Desktop Processor 8 Cores up to 5.3 GHz Unlocked LGA1200 (Intel 500 Series & Select 400 Series Chipset) 125W", "price" : 900, "img_url" : "/img/Picture1.jpg"},
+        {"id" : 2, "name" :  "Intel Core i7-11700F", "descriptions" : "Intel Core i7-11700F Desktop Processor 8 Cores up to 4.9 GHz LGA1200 (Intel 500 Series & Select 400 Series Chipset) 65W", "price" : 500, "img_url" : "/img/Picture2.jpg"},
+        {"id" : 3, "name" :  "AMD Ryzen 9 5950X", "descriptions" : "AMD Ryzen 9 5950X 16-core, 32-Thread Unlocked Desktop Processor", "price" : 1600   , "img_url" : "/img/Picture3.jpg"},
+        {"id" : 4, "name" :  "AMD Ryzen 7", "descriptions" : "AMD Ryzen 7 5800X 8-core, 16-Thread Unlocked Desktop Processor", "price" : 600, "img_url" : "/img/Picture4.jpg"},
+        {"id" : 5, "name" :  "ASUS ROG X570", "descriptions" : "ASUS ROG X570 Crosshair VIII Formula AM4 Zen 3 Ryzen 5000 & 3rd Gen Ryzen ATX Motherboard with PCIe 4.0, on-Board WiFi 6 (802.11Ax), 5 Gbps LAN", "price" : 900, "img_url" : "/img/Picture5.jpg"},
+        {"id" : 6, "name" :  "MSI MEG X570", "descriptions" : "MSI MEG X570 GODLIKE Motherboard (AMD AM4, PCIe 4.0, DDR4, SATA 6Gb/s, Triple M.2, USB 3.2, AX Wi-Fi 6, 10G Super LAN, Extended-ATX)", "price" : 1600, "img_url" : "/img/Picture6.jpg"},
+        {"id" : 7, "name" :  "GIGABYTE X570", "descriptions" : "GIGABYTE X570 AORUS Xtreme (AMD Ryzen 5000/X570/E-ATX/PCIe4.0/DDR4/Aqantia 10GbE LAN/RGB Fusion 2.0/Fins-Array Heatsink/3xM.2 Thermal Guard/USB3.1/Gaming Motherboard)", "price" : 1000, "img_url" : "/img/Picture7.jpg"},
+        {"id" : 8, "name" :  "ASUS TUF Gaming NVIDIA GeForce RTX 3090", "descriptions" : "ASUS TUF Gaming NVIDIA GeForce RTX 3090 OC Edition Graphics Card- PCIe 4.0, 24GB GDDR6X, HDMI 2.1, DisplayPort 1.4a, Dual Ball Fan Bearings", "price" : 4500, "img_url" : "/img/Picture8.jpg"},
+        {"id" : 9, "name" :  "GeForce RTX 3090 24GB GDRR6X", "descriptions" : "MSI Gaming GeForce RTX 3090 24GB GDRR6X 384-Bit HDMI/DP Nvlink Tri-Frozr 2 Ampere Architecture OC Graphics Card (RTX 3090 GAMING X TRIO 24G)", "price" : 1000, "img_url" : "/img/Picture9.jpg"},
+        {"id" : 10, "name" :  "GeForce RTX 3090", "descriptions" : "Gigabyte AORUS GeForce RTX 3090 XTREME WATERFORCE 24GB Graphics Card", "price" : 1000, "img_url" : "/img/Picture10.jpg"}
+]
