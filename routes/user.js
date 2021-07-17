@@ -47,6 +47,12 @@ router
 })
 
 
+
+// .put('/api/user-editprofile', isAuth, (req, res, next) => {
+//     res.send(req.user);
+//     // res.send('You made it to the route.' +  req.user.full_name);
+// })
+
 .get('/api/logout', (req, res, next) => {
     req.logout();
     res.send('Logged out');

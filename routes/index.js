@@ -32,11 +32,13 @@ router.get('/register' ,(req, res) => {
 router.post('/login', (req, res) => {
     req.session.loggedin = true
 })
-router.get('/logout', (req, res) => {
-    req.logout();
-    req.session.destroy();
-    res.redirect('/');
-})
+
+
+// router.get('/logout', (req, res) => {
+//     req.logout();
+//     req.session.destroy();
+//     res.redirect('/');
+// })
 
 
 

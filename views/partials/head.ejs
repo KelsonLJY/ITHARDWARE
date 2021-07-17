@@ -25,21 +25,25 @@
             <li>
                 <a href="/Contact.ejs" title="Contact">Contact</a>
             </li>
-            
+            <!-- <% if(isAthenticated){  %>  -->
             <li>
                 <a href="/ViewAcct.ejs" title="ViewAcct">View Account</a>
             </li>
-         
-            <li>
-                <a href="/login" title="Login">Login</a>
-            </li>
+            <li >
+                <a href="/logout" class="logout" title="Logout">Logout</a>
+            </li> 
+            <!-- <% } else{ %> -->
             <li>
                 <a href="/register" title="Register">Register</a>
             </li>
+                <li>
+                    <a href="/login" title="Login">Login</a>
+                </li>
+                
+        <!-- <% } %>  -->
        
-            <li style="float:right">
-                <a href="/logout" class="logout" title="Logout">Logout</a>
-            </li> 
+       
+            
         </ul>
     </nav>
 </header>
