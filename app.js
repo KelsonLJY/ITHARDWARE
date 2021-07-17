@@ -22,6 +22,15 @@ app.use(express.urlencoded({extended:true}))
 app.set('view engine','ejs')
 app.use(passport.initialize())
 app.use(passport.session())
+
+
+// app.use(function(req, res, next){
+// res.locals.isAuthenticated = req.
+// isAuthenticated();
+// next();
+// });
+
+
 app.use(express.static('public'))
 app.use(require("./routes/index"))
 app.use(require("./routes/user"))
