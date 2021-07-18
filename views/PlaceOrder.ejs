@@ -66,7 +66,7 @@
             width: 70%;
             color: #534745;
         }
-        #About {
+        #cart {
             /* background-color: #F1EAE8; */
             padding: 16px;
         }
@@ -141,6 +141,7 @@
         #footer img-cont {
             flex:1;
         }
+      
      
     </style>
 
@@ -153,50 +154,13 @@
     <section>
     
     
-        <div id="app" style="margin-left:120px;">
-          
-            <label for="search">Search Items:</label>
-            <!-- <input type="text" id="search" name="search"> -->
-   
-            <input type="text" id="desc" v-model="search_text" placeholder="Items" title="Type in a name" @keyup.enter="handleKeyUp">
-
-            <img src="../img/search_icon.png" width="15px" height="15px" >
-           
-
+        <div id="placeorder">
+            <h2>Order Success</h2>
             
-            <h4 v-show="message">{{message}}</h4>
-            <table id="myTable" v-show="!message">
-                <tr class="header">
-                    <th>Items</th>
-            
-                    <th>Description</th>
-                    <th>price</th>
-                    <th>Add to Cart</th>
-                </tr>
-                <tr v-for="item in items">
-                    <td><img :src="item.img_url" width="100px" height="100px" ></td>
-                
-                    <td>{{item.descriptions}}</td>
-                    <td>${{item.price}}</td>
-                    <td>  
-                        <a href="ViewCart.ejs">   <button @click="onClickedAddToCard(item)"><img src="../img/cart.png" width="15px" height="15px" ></button></a>
-                    </td>
-                </tr>
-                
-            </table>
-
-
-
-  
-    
+            </form>
         </div>
     </section>
     <%- include('./partials/footer'); %>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vee-validate@<3.0.0/dist/vee-validate.js"></script>
-    <script src="js/item.js"></script>
 </body>
 
 </html>

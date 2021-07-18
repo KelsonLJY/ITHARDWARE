@@ -13,6 +13,18 @@ router.get('/About.ejs' ,(req, res) => {
 router.get('/Items.ejs' ,(req, res) => {
     res.render('Items')
 })
+router.get('/ViewCart.ejs' ,(req, res) => {
+    res.render('ViewCart')
+})
+
+router.get('/Checkout.ejs' ,(req, res) => {
+    res.render('Checkout')
+})
+
+router.get('/PlaceOrder.ejs' ,(req, res) => {
+    res.render('PlaceOrder')
+})
+
 router.get('/Contact.ejs' ,(req, res) => {
     res.render('Contact')
 })

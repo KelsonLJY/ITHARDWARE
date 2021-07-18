@@ -155,11 +155,28 @@
     
     
         <div id="cart">
-            <h2>Items in Cart</h2>
-
+            <h2>Items in Cart - Checkout</h2>
+            <form  >
+                <label for="subtotal">Sub Total:</label>
+                <input type="text" id="subtotal" name="subtotal"><br><br>
+                <label for="deliveryfee">Delivery Fee:</label>
+                <input type="text" id="deliveryfee" name="deliveryfee"><br><br>
+                <label for="deliveryadd">Delivery <Address></Address>:</label>
+                <input type="text" id="deliveryadd" name="deliveryadd"><br><br>
+                <label for="deliverydate">Delivery Date:</label>
+                <input type="date" id="deliverydate" name="deliverydate"><br><br>
+                <label for="deliverytime">Delivery Time:</label>
+                <input type="text" id="deliverytime" name="deliverytime"><br><br>
+                <label for="payment">Payment Method:</label>
+                <input type="text" id="payment" name="payment"><br><br>
+                <a href="PlaceOrder.ejs"><input type="submit" value="Place Order"></a>
+               
+            </form>
         </div>
     </section>
     <%- include('./partials/footer'); %>
+    <script src='js/jquery.min.js'></script>
+    <script src='js/viewOrder.js'></script>
 </body>
 
 </html>
