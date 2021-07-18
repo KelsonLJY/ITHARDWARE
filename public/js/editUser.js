@@ -5,7 +5,7 @@ $(document).ready(function () {
     userId = urlParams.get('user_id');
 
     $.ajax({
-        url: "/api/user-editprofile?user_id=" + userId,
+        url: "/api/user-editprofile",
         method: "get"
     }).done(
         function (data) {
@@ -28,15 +28,11 @@ $(document).ready(function () {
 //editevent anytime upon user interaction. form submission
 function editCustomer() {
     var user = {
-        _id: userId,
         full_name: $("#name").val(),
         dob: $("#dob").val(),
-        email: $("#email").val(),
         phone: $("#phone").val(),
         address: $("#address").val(),
-        postal_code: $("#postal_code").val(),
-        password: $("#password").val(),
-        reconfirmpassword: $("#reconfirmpassword").val()
+        postal_code: $("#postal_code").val()
     };
     $.ajax(
         {

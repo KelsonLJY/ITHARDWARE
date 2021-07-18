@@ -41,17 +41,19 @@ router
     res.send(req.user);
     // res.send('You made it to the route.' +  req.user.full_name);
 })
-.get('/api/user-editprofile', isAuth, (req, res, next) => {
-    res.send(req.user);
-    // res.send('You made it to the route.' +  req.user.full_name);
-})
-
-
-
-// .put('/api/user-editprofile', isAuth, (req, res, next) => {
+// .get('/api/user-editprofile', isAuth, (req, res, next) => {
 //     res.send(req.user);
 //     // res.send('You made it to the route.' +  req.user.full_name);
 // })
+
+
+
+.put('/api/user-editprofile', isAuth, async (req, res, next) => {
+    const filter = { email: req.user.email};
+    const user=req.body;
+    await User.updateOne(filter, user);
+    res.send('Successfully Updated');
+})
 
 .get('/api/logout', (req, res, next) => {
     req.logout();
