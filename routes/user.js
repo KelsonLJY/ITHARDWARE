@@ -5,6 +5,7 @@ const passport = require('passport')
 const isAuth = require('../middleware/auth').isAuth;
 
 router
+
 .get('/api/user-editprofile', isAuth, (req, res, next) => {
     res.send(req.user)
 })
@@ -49,10 +50,7 @@ router
     res.send('Successfully Updated');
 })
 
-.get('/api/logout', (req, res, next) => {
-    req.logout();
-    res.send('Logged out');
-}).post("/api/login", (req, res, next) => {
+.post("/api/login", (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
         if (err) {
             return next(err);
@@ -62,8 +60,8 @@ router
                 message : 'Invalid email or password'
             })
         }
-        // res.locals.user = req.session.user;
-
+        req.session.loggedin = true;
+        req.session.user = user;
         req.login(user, (err) => {
    
             res.send({

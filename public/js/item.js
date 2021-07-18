@@ -31,48 +31,49 @@ var myObject = new Vue({
             // Get Localstorage Items
             let storageItems = JSON.parse(localStorage.getItem('items'));
 
-            // Find & Get User Item
-            let userItems = storageItems.filter(e => e.user_id == this.userId);
+       
 
          
             tmp.qty = 1;
-            tmp.user_id = this.userId;
-            /**  If user items don't have in local storage.
-             * Push current item into userItems array
-             * SET userItems in local storage
+            
+            /**  If items don't have in local storage.
+             * Push current item into storageItems array
+             * SET storageItems in local storage
              */  
-            if(!userItems){
-                userItems.push(tmp);
-                localStorage.setItem('items', JSON.stringify(items));
-            }
-
-            /**  IF user  items already existed in local storage
-             *   Find    Item 
-             *   IF item is already existed in local storage
-             *      ADD 1 QTY and UPDATE QTY
-             *   ELSE
-             *      PUSH current item into userItems array
-             */  
-            if(userItems.length > 0){
-                let itemIndex = userItems.findIndex(e=> e.id == item.id);
-                if(itemIndex > -1){
-                    tmp.qty = parseInt(userItems[itemIndex].qty) + 1;
+            if(!storageItems){
+                storageItems = [];
+                storageItems.push(tmp);
+                localStorage.setItem('items', JSON.stringify(storageItems));
+            }else{
+                /**  IF user  items already existed in local storage
+                 *   Find    Item 
+                 *   IF item is already existed in local storage
+                 *      ADD 1 QTY and UPDATE QTY
+                 *   ELSE
+                 *      PUSH current item into storageItems array
+                 */  
+                 if(storageItems.length > 0){
+                    let itemIndex = storageItems.findIndex(e=> e.id == item.id);
+                    if(itemIndex > -1){
+                        tmp.qty = parseInt(storageItems[itemIndex].qty) + 1;
                    
-                    userItems[itemIndex] = tmp;
-                    localStorage.setItem('items', JSON.stringify(userItems));
+                        storageItems[itemIndex] = tmp;
+                        localStorage.setItem('items', JSON.stringify(storageItems));
 
-                }else{
-                    userItems.push(tmp);
-                    localStorage.setItem('items', JSON.stringify(userItems));
+                    }else{
+                        storageItems.push(tmp);
+                        localStorage.setItem('items', JSON.stringify(storageItems));
+                    }
                 }
             }
+
+            
         }
     },
     mounted(){
         axios.get('/api/get-items').then(({data}) => {
             this.db_items = data.items;
             this.items = data.items;
-            this.userId = data.user._id;
         }).catch(error => {
           
         })

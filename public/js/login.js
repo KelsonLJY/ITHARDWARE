@@ -11,10 +11,11 @@ var myObject = new Vue({
     },
     methods:{           
         login(){
+            
             this.$validator.validateAll().then(success => {
                 if(success){
+                    localStorage.removeItem('items')
                     axios.post('/api/login', this.user).then(({data}) => {
-                        console.log(window.location)
                         window.location.href = window.location.origin;
                     }).catch(error => {
                         this.message = error.response.data.message;
