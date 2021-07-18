@@ -4,19 +4,19 @@ const isAuth = require('../middleware/auth').isAuth;
 router.get('/' ,(req, res) => {
     res.render('Home')
 })
-router.get('/Home.ejs' ,(req, res) => {
-    res.render('Home')
-})
-router.get('/About.ejs' ,(req, res) => {
+router.get('/about' ,(req, res) => {
     res.render('About')
 })
-router.get('/Items.ejs' ,(req, res) => {
+router.get('/items' ,(req, res) => {
     res.render('Items')
 })
-router.get('/Contact.ejs' ,(req, res) => {
+router.get('/contact' ,(req, res) => {
     res.render('Contact')
 })
-router.get('/ViewAcct.ejs'  ,isAuth ,(req, res) => {
+router.get('/view-cart' ,(req, res) => {
+    res.render('Checkout')
+})
+router.get('/view-account'  ,isAuth ,(req, res) => {
     if(isAuth){
         res.render('ViewAcct')
     }else{

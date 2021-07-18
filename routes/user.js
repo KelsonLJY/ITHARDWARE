@@ -5,7 +5,6 @@ const passport = require('passport')
 const isAuth = require('../middleware/auth').isAuth;
 
 router
-
 .get('/api/user-editprofile', isAuth, (req, res, next) => {
     res.send(req.user)
 })
@@ -35,21 +34,15 @@ router
     })
     .catch(err=>console.log(err))
 })
-
-
-
 .get('/api/user-profile', isAuth, (req, res, next) => {
     res.send(req.user);
 })
-
-
 .put('/api/user-editprofile', isAuth, async (req, res, next) => {
     const filter = { email: req.user.email};
     const user=req.body;
     await User.updateOne(filter, user);
     res.send('Successfully Updated');
 })
-
 .post("/api/login", (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
         if (err) {
@@ -63,7 +56,6 @@ router
         req.session.loggedin = true;
         req.session.user = user;
         req.login(user, (err) => {
-   
             res.send({
                 email : user.email,
                 full_name : user.full_name
@@ -72,9 +64,4 @@ router
     })(req, res, next)
 })
 
-
-// .get('/api/user-editprofile', isAuth, (req, res, next) => {
-//     res.send(req.user);
-//     // res.send('You made it to the route.' +  req.user.full_name);
-// })
 module.exports=router;
