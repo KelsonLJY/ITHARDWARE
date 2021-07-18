@@ -39,13 +39,7 @@ router
 
 .get('/api/user-profile', isAuth, (req, res, next) => {
     res.send(req.user);
-    // res.send('You made it to the route.' +  req.user.full_name);
 })
-// .get('/api/user-editprofile', isAuth, (req, res, next) => {
-//     res.send(req.user);
-//     // res.send('You made it to the route.' +  req.user.full_name);
-// })
-
 
 
 .put('/api/user-editprofile', isAuth, async (req, res, next) => {
@@ -58,26 +52,7 @@ router
 .get('/api/logout', (req, res, next) => {
     req.logout();
     res.send('Logged out');
-})
-
-// .get("/logout", function (req, res) {
-//     var token = req.query.token;
-//     if (token == undefined) {
-//         res.status(401).send("No tokens are provided");
-//     } else {
-//         db.checkToken(token, function (err, user) {
-//             if (err || user == null) {
-//                 res.status(401).send("Invalid token provided");
-//             } else {
-//                 db.removeToken(user._id, function (err, user) {
-//                     res.status(200).send("Logout successfully")
-//                 });
-//             }
-//         })
-//     }
-// })
-
-.post("/api/login", (req, res, next) => {
+}).post("/api/login", (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
         if (err) {
             return next(err);
@@ -100,5 +75,8 @@ router
 })
 
 
-
+// .get('/api/user-editprofile', isAuth, (req, res, next) => {
+//     res.send(req.user);
+//     // res.send('You made it to the route.' +  req.user.full_name);
+// })
 module.exports=router;

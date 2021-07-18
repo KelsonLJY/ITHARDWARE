@@ -34,12 +34,6 @@ router.post('/login', (req, res) => {
 })
 
 
-// router.get('/logout', (req, res) => {
-//     req.logout();
-//     req.session.destroy();
-//     res.redirect('/');
-// })
-
 
 
 router.get('/edit-user', isAuth, (req, res, next) => {
