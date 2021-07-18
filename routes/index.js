@@ -27,7 +27,7 @@ router.get('/view-cart' ,(req, res) => {
     res.render('ViewCart')
 })
 router.get('/view-account'  ,isAuth ,(req, res) => {
-    res.render('login')
+    res.render('ViewAcct')
 })
 router.get('/login' ,(req, res) => {
     res.render('login')

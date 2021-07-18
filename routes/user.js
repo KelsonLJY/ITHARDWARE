@@ -8,7 +8,7 @@ router
 .get('/api/user-editprofile', isAuth, (req, res, next) => {
     res.send(req.user)
 })
-.post('/user/register',async (req,res)=>{
+.post('/api/register',async (req,res)=>{
     const user=req.body;
     const salt = bcrypt.genSaltSync(15);
     const hash = bcrypt.hashSync(user.password, salt);
