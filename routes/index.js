@@ -22,7 +22,7 @@ router.get('/PlaceOrder.ejs' ,(req, res) => {
     res.render('PlaceOrder')
 })
 
-router.get('/Contact.ejs' ,(req, res) => {
+// router.get('/Contact.ejs' ,(req, res) => {
 router.get('/contact' ,(req, res) => {
     res.render('Contact')
 })
