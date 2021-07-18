@@ -10,32 +10,24 @@ router.get('/about' ,(req, res) => {
 router.get('/items' ,(req, res) => {
     res.render('Items')
 })
-router.get('/ViewCart.ejs' ,(req, res) => {
-    res.render('ViewCart')
-})
-
-router.get('/Checkout.ejs' ,(req, res) => {
+router.get('/delivery-info' ,(req, res) => {
     res.render('Checkout')
 })
-
-router.get('/PlaceOrder.ejs' ,(req, res) => {
-    res.render('PlaceOrder')
+router.get('/place-order' , isAuth ,(req, res) => {
+    if(isAuth){
+        res.render('PlaceOrder')
+    }else{
+        res.render('login')
+    }
 })
-
-// router.get('/Contact.ejs' ,(req, res) => {
 router.get('/contact' ,(req, res) => {
     res.render('Contact')
 })
 router.get('/view-cart' ,(req, res) => {
-    res.render('Checkout')
+    res.render('ViewCart')
 })
 router.get('/view-account'  ,isAuth ,(req, res) => {
-    if(isAuth){
-        res.render('ViewAcct')
-    }else{
-        res.render('login')
-    }
-
+    res.render('login')
 })
 router.get('/login' ,(req, res) => {
     res.render('login')

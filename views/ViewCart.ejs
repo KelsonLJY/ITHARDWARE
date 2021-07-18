@@ -3,6 +3,8 @@
 
 <head>
     <title>IT Hardware</title>
+
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
     <style>
         body {
             background-color: white;
@@ -155,21 +157,32 @@
     
     
         <div id="cart">
-            
-            <section id="ViewCart">
+            <h1 v-show="items.length == 0">No items!!!</h1>
+            <section id="ViewCart" v-show="items.length > 0">
                 <h1>Your Cart</h1>
                 <h1>Will display items added to cart</h1>
+                <form>
+                <table>
+                    <tr v-for="(item, index) in items">
+                        <td><img :src="item.img_url" width="100px" height="100px" ></td>
+                        <td>{{item.descriptions}}<br>
+                            <span>Price : ${{item.price}}</span><br>
+                            <span>Qty : <input type="number" :name="'qty' + index" v-model="item.qty" v-validate="'required|min:1'"/></span>
+                            <span class="txt-danger" v-if="errors.has('qty' + index)">Invalid qty</span><br>
+
+                            <button style="margin-top:5px;" @click.prevent="onClickedRemove(item)">Remove</button>
+                        </td>
+                    </tr>
+                </table>
+                
                 <section class="carts">
-                    <form  >
                         <label for="subtotal">Sub Total:</label>
-                        <input type="text" id="subtotal" name="subtotal"><br><br>
+                        <input type="text" id="subtotal" name="subtotal" disabled :value="total"><br><br>
                         <label for="deliveryfee">Delivery Fee:</label>
-                        <input type="text" id="deliveryfee" name="deliveryfee"><br><br>
-                        <a href="Checkout.ejs"><input type="submit" value="Checkout"></a>
-                       
-                    </form>
+                        <input type="text" id="deliveryfee" name="deliveryfee" value="2" disabled><br><br>
+                        <input type="submit" value="Checkout" @click.prevent="onClickedCheckout"/>
                 </section>
-              
+                </form>
                 
                
                 <!-- <a href="../views/Register.html"><input type="submit" value="Edit"></a><br>
@@ -178,8 +191,10 @@
         </div>
     </section>
     <%- include('./partials/footer'); %>
-    <script src='js/jquery.min.js'></script>
-    <script src='js/ViewCart.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vee-validate@<3.0.0/dist/vee-validate.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

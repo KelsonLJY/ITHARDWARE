@@ -26,13 +26,9 @@ var myObject = new Vue({
         onClickedAddToCard(item){
             // Clone Object
             let tmp = Object.assign({}, item);
-            
 
             // Get Localstorage Items
             let storageItems = JSON.parse(localStorage.getItem('items'));
-
-       
-
          
             tmp.qty = 1;
             
@@ -64,6 +60,9 @@ var myObject = new Vue({
                         storageItems.push(tmp);
                         localStorage.setItem('items', JSON.stringify(storageItems));
                     }
+                }else{
+                    storageItems.push(tmp);
+                    localStorage.setItem('items', JSON.stringify(storageItems));
                 }
             }
 
