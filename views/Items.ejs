@@ -148,189 +148,55 @@
 </head>
 
 <body>
-    <header>
-        <nav id="nav">
-            <ul>
-                 <!-- <li>
-                    <a href="Home.html" title="Home">Home</a>
-                </li> -->
-                <li>
-                    <a href="/Home.ejs" title="Home">Home</a>
-                </li>
-                <li >
-                    <a href="/About.ejs" title="About">About</a>
-                </li>
-                <!-- <li class="dropdown">
-                    <a href="Items.html" class="dropbtn"  title="Items">Items</a>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                      </div>
-                </li> -->
-                <li>
-                    <a href="/Items.ejs" title="Items">Items</a>
-                </li>
-                
-                <li>
-                    <a href="/Contact.ejs" title="Contact">Contact</a>
-                </li>
-                <li>
-                    <a href="/login" title="Login">Login</a>
-                </li>
-                <li>
-                    <a href="/register" title="Register">Register</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <%- include('./partials/head'); %>
+
     <section>
     
     
-        <div id="searchitems">
-            
-                <label for="search">Search Items:</label>
-                <!-- <input type="text" id="search" name="search"> -->
+        <div id="app" style="margin-left:120px;">
+          
+            <label for="search">Search Items:</label>
+            <!-- <input type="text" id="search" name="search"> -->
    
-                <input type="text" id="desc" onkeyup="myFunction()" placeholder="Items" title="Type in a name" >
+            <input type="text" id="desc" v-model="search_text" placeholder="Items" title="Type in a name" @keyup.enter="handleKeyUp">
 
-                <img src="../img/search_icon.png" width="15px" height="15px" >
+            <img src="../img/search_icon.png" width="15px" height="15px" >
            
 
             
+            <h4 v-show="message">{{message}}</h4>
+            <table id="myTable" v-show="!message">
+                <tr class="header">
+                    <th>Items</th>
+            
+                    <th>Description</th>
+                    <th>price</th>
+                    <th>Add to Cart</th>
+                </tr>
+                <tr v-for="item in items">
+                    <td><img :src="item.img_url" width="100px" height="100px" ></td>
+                
+                    <td>{{item.descriptions}}</td>
+                    <td>${{item.price}}</td>
+                    <td>  
+                        <a href="/view-cart">   <button @click="onClickedAddToCard(item)"><img src="../img/cart.png" width="15px" height="15px" ></button></a>
+                    </td>
+                </tr>
+                
+            </table>
 
-    <table id="myTable">
-        <tr class="header">
-          <th style="width:30%;">Items</th>
-          <th style="width:30%;">Description</th>
-          <th style="width:20%;">price</th>
-          <th style="width:10%;">Add to Cart</th>
-        </tr>
-        <tr>
-          <td><img src="../img/Picture1.jpg" width="100px" height="100px" ></td>
-          <td>Intel Core i9-11900K Desktop Processor 8 Cores up to 5.3 GHz Unlocked LGA1200 (Intel 500 Series & Select 400 Series Chipset) 125W</td>
-          <td>$900</td>
-          <td>  <a href="../views/Checkout.html"><button >
-            <img src="../img/cart.png" width="15px" height="15px" >
-        </button></a>
-          </td>
-        </tr>
-        <tr>
-          <td><img src="../img/Picture2.jpg" width="100px" height="100px" ></td>
-          <td>Intel Core i7-11700F Desktop Processor 8 Cores up to 4.9 GHz LGA1200 (Intel 500 Series & Select 400 Series Chipset) 65W</td>
-          <td>$500</td>
-          <td><button >
-            <img src="../img/cart.png" width="15px" height="15px" >
-        </button></td>
-        </tr>
-        <tr>
-          <td><img src="../img/Picture3.jpg" width="100px" height="100px" ></td>
-          <td>AMD Ryzen 9 5950X 16-core, 32-Thread Unlocked Desktop Processor</td>
-          <td>$1600</td>
-          <td>
-           <button >
-            <img src="../img/cart.png" width="15px" height="15px" >
-        </button></td>
-        </tr>
-        <tr>
-          <td><img src="../img/Picture4.jpg" width="100px" height="100px" ></td>
-          <td>AMD Ryzen 7 5800X 8-core, 16-Thread Unlocked Desktop Processor</td>
-          <td>$600</td>
-          <td><button >
-            <img src="../img/cart.png" width="15px" height="15px" >
-        </button></td>
-        </tr>
-        <tr>
-          <td><img src="../img/Picture5.jpg" width="100px" height="100px" ></td>
-          <td>ASUS ROG X570 Crosshair VIII Formula AM4 Zen 3 Ryzen 5000 & 3rd Gen Ryzen ATX Motherboard with PCIe 4.0, on-Board WiFi 6 (802.11Ax), 5 Gbps LAN</td>
-          <td>$900</td>
-          <td><button >
-            <img src="../img/cart.png" width="15px" height="15px" >
-        </button></td>
-        </tr>
-        <tr>
-          <td><img src="../img/Picture6.jpg" width="100px" height="100px" ></td>
-          <td>MSI MEG X570 GODLIKE Motherboard (AMD AM4, PCIe 4.0, DDR4, SATA 6Gb/s, Triple M.2, USB 3.2, AX Wi-Fi 6, 10G Super LAN, Extended-ATX) </td>
-          <td>$1600</td>
-          <td><button >
-            <img src="../img/cart.png" width="15px" height="15px" >
-        </button></td>
-        </tr>
-        <tr>
-          <td><img src="../img/Picture7.jpg" width="100px" height="100px" ></td>
-          <td>GIGABYTE X570 AORUS Xtreme (AMD Ryzen 5000/X570/E-ATX/PCIe4.0/DDR4/Aqantia 10GbE LAN/RGB Fusion 2.0/Fins-Array Heatsink/3xM.2 Thermal Guard/USB3.1/Gaming Motherboard)</td>
-          <td>$1000</td>
-          <td><button >
-            <img src="../mg/cart.png" width="15px" height="15px" >
-        </button></td>
-        </tr>
-        <tr>
-          <td><img src="../img/Picture8.jpg" width="100px" height="100px" ></td>
-          <td>ASUS TUF Gaming NVIDIA GeForce RTX 3090 OC Edition Graphics Card- PCIe 4.0, 24GB GDDR6X, HDMI 2.1, DisplayPort 1.4a, Dual Ball Fan Bearings</td>
-          <td>$4500</td>
-          <td><button >
-            <img src="../img/cart.png" width="15px" height="15px" >
-        </button></td>
-        </tr>
-        <tr>
-          <td><img src="../img/Picture9.jpg" width="100px" height="100px" ></td>
-          <td>MSI Gaming GeForce RTX 3090 24GB GDRR6X 384-Bit HDMI/DP Nvlink Tri-Frozr 2 Ampere Architecture OC Graphics Card (RTX 3090 GAMING X TRIO 24G)</td>
-          <td>$1000</td>
-          <td><button >
-            <img src="../img/cart.png" width="15px" height="15px" >
-        </button></td>
-        </tr>
-        <tr>
-          <td><img src="../img/Picture10.jpg" width="100px" height="100px" ></td>
-          <td>Gigabyte AORUS GeForce RTX 3090 XTREME WATERFORCE 24GB Graphics Card</td>
-          <td>$1000</td>
-          <td><button >
-            <img src="../img/cart.png" width="15px" height="15px" >
-        </button></td>
-        </tr>
-      </table>
-      <script src='../js/jquery.min.js'></script>
-    <script src='../js/viewItems.js'></script>
+
 
   
     
         </div>
     </section>
-    <footer id="footer">
-        <div id="footer-flex">
-        <div id="contact-flex" id="obj-cont">
-            <div id="img-cont">
-        <img src="../img/phone-call.png" id="phonecall" width="15px" height="15px"><p>Phone:+65 12345678</p><br>
-    </div>
-    <div id="img-cont">
-        <img src="../img/pin.png" id="pin" width="15px" height="15px"><p>location:xxxxxxxx</p><br>
-    </div>
-    <div id="img-cont">
-        <img src="../img/Mail.png" id="mail" width="15px" height="15px"><p>mail:IT_Hardware@gmail.com</p><br>
-        </div>
-    </div>
+    <%- include('./partials/footer'); %>
 
-    <div id="copyright" id="obj-cont">
-        <p>© Copyright 2021. All rights reserved to ITHardware.</p>
-    </div>
-
-    <div id="service" id="obj-cont">
-        <p><u>Customer Service</u></p>
-        <div id="service-cont">
-        <p>Contact Us</p><br>
-        </div>
-        <div id="service-cont">
-        <p>Help and advice</p><br>
-        </div>
-        <div id="service-cont">
-        <p>Return Policy</p><br>
-    </div>
-        <div id="service-cont">
-        <p>Terms and condition</p>
-    </div>
-    </div>
-</div>
-    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vee-validate@<3.0.0/dist/vee-validate.js"></script>
+    <script src="js/item.js"></script>
 </body>
 
 </html>

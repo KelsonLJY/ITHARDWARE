@@ -2,6 +2,13 @@
 <html>
 
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
     <title>IT Hardware</title>
     <style>
         body {
@@ -11,8 +18,6 @@
             margin: 0;
             overflow-x: hidden;
         }
-
-
         ul {
             text-align: center;
             list-style-type: none;
@@ -23,15 +28,12 @@
             height: 80px;
             width: 100%;
             padding-right: 50px;
-
         }
-
         li {
             float: left;
             color: darkgoldenrod;
             margin-left: 100px;
         }
-
         li a {
             display: block;
             color: white;
@@ -39,22 +41,18 @@
             padding: 14px 16px;
             text-decoration: none;
         }
-
         li a:hover {
             background-color: transparent;
             color: #CCAE93;
         }
-
         #banner {
             background-color:white;
             /*             width: 500%;*/
         }
-
         #bannerlogo {
             text-align: center;
             padding: 40px 515px;
         }
-
         #case {
             background-color: #F1EAE8;
             padding: 16px;
@@ -63,30 +61,26 @@
             padding: 20px;
             padding-bottom: 100px;
         }
-
         #contactus h1 {
             padding-left: 500px;
             width: 70%;
             color: #534745;
         }
-        #loginform{
+        .loginform{
             padding-left: 500px;
             width: 70%;
             color: #534745;
-
         }
         #About {
             /* background-color: #F1EAE8; */
             padding: 16px;
         }
-
         #About h2,
         p {
             padding-left: 175px;
             width: 70%;
             color: #534745;
         }
-
         #footer {
             background-color: darkcyan;
             margin-top: 10px;
@@ -95,7 +89,6 @@
         #footer p{
            color: white;
         }
-
         #contact {
             margin: 0;
             overflow: hidden;
@@ -104,7 +97,6 @@
             width: 100%;
             color: #CCAE93;
              padding-left: 10px; 
-
         }
      #copyright {
             margin: 0;
@@ -139,7 +131,6 @@
         #contactinfo {
             display: flex;
         }
-
         #footer obj-cont {
             flex: 1;
         }
@@ -159,93 +150,34 @@
 
 </head>
 
-<body>
-    <header>
-        <nav id="nav">
-            <ul>
-                 <!-- <li>
-                    <a href="Home.html" title="Home">Home</a>
-                </li> -->
-                <li>
-                    <a href="/Home.ejs" title="Home">Home</a>
-                </li>
-                <li >
-                    <a href="/About.ejs" title="About">About</a>
-                </li>
-                <!-- <li class="dropdown">
-                    <a href="Items.html" class="dropbtn"  title="Items">Items</a>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                      </div>
-                </li> -->
-                <li>
-                    <a href="/Items.ejs" title="Items">Items</a>
-                </li>
-                
-                <li>
-                    <a href="/Contact.ejs" title="Contact">Contact</a>
-                </li>
-                <li>
-                    <a href="/login" title="Login">Login</a>
-                </li>
-                <li>
-                    <a href="/register" title="Register">Register</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<body >
+    <%- include('./partials/head'); %>
     
-    <section id="loginform">
+    <section class="loginform" id="app">
         <h1>Login</h1>
-        <form  onsubmit="return login();" >
+        <div style="height:50px;background-color:#F8D7DA;width:500px !important;margin-bottom:5px;" v-if="message">
+            <p  style="color:black;margin-top:5px;">{{message}}</p>
+        </div>
+        <form id="app">
             <label for="email">Email:</label>
-            <input type="text" id="email" name="email"><br><br>
+            <input type="text" id="email" name="email" v-model="user.email" v-validate="'required|email'"><br><br>
+            <span class="txt-danger" v-if="errors.has('email')">{{ errors.first('email') }}</span><br>
+
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password"><br><br>
-            <input type="submit" value="Login">
+            <input type="password" id="password" name="password" v-model="user.password"><br><br>
+            <input type="submit" value="Login"  @click.prevent="login">
            
         </form>
-        <a href="../views/Register.html"><input type="submit" value="Register"></a><br>
+        <a href="/register"><input type="submit" value="Register"></a><br>
         <a href="../views/ResetPass.html"><input type="submit" value="Forget Password?"></a>
     </section>
+    <%- include('./partials/footer'); %>
 
-    <footer id="footer">
-        <div id="footer-flex">
-        <div id="contact-flex" id="obj-cont">
-            <div id="img-cont">
-        <img src="../img/phone-call.png" id="phonecall" width="15px" height="15px"><p>Phone:+65 12345678</p><br>
-    </div>
-    <div id="img-cont">
-        <img src="../img/pin.png" id="pin" width="15px" height="15px"><p>location:xxxxxxxx</p><br>
-    </div>
-    <div id="img-cont">
-        <img src="../img/Mail.png" id="mail" width="15px" height="15px"><p>mail:IT_Hardware@gmail.com</p><br>
-        </div>
-    </div>
-
-    <div id="copyright" id="obj-cont">
-        <p>© Copyright 2021. All rights reserved to ITHardware.</p>
-    </div>
-
-    <div id="service" id="obj-cont">
-        <p><u>Customer Service</u></p>
-        <div id="service-cont">
-        <p>Contact Us</p><br>
-        </div>
-        <div id="service-cont">
-        <p>Help and advice</p><br>
-        </div>
-        <div id="service-cont">
-        <p>Return Policy</p><br>
-    </div>
-        <div id="service-cont">
-        <p>Terms and condition</p>
-    </div>
-    </div>
-</div>
-    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vee-validate@<3.0.0/dist/vee-validate.js"></script>
+    <script src="js/login.js"></script>
+   
 </body>
 
 </html>

@@ -160,37 +160,12 @@
 </head>
 
 <body>
-    <header>
-        <nav id="nav">
-            <ul>
-                 <!-- <li>
-                    <a href="Home.html" title="Home">Home</a>
-                </li> -->
-                <li>
-                    <a href="Home.html" title="Home">Home</a>
-                </li>
-                <li>
-                    <a href="About.html" title="About">About</a>
-                </li>
-                <li>
-                    <a href="Items.html" title="Items">Items</a>
-                </li>
-                <li>
-                    <a href="Contact.html" title="Contact">Contact</a>
-                </li>
-                <li>
-                    <a href="Login.html" title="Login">Login</a>
-                </li>
-                <li>
-                    <a href="Register.html" title="Register">Register</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <%- include('./partials/head'); %>
+
     
     <section id="ViewAcct">
         <h1>Your Account</h1>
-        <form  >
+        <!-- <form  >
             <label for="email">Your Email:</label>
             <input type="text" id="email" name="email"><br><br>
             <label for="name">Name:</label>
@@ -198,46 +173,20 @@
             <label for="location">Location:</label>
             <input type="text" id="location" name="location"><br><br>
            
-        </form>
-        <a href="../views/Register.html"><input type="submit" value="Edit"></a><br>
-        <input type="submit" value="Save">
+        </form> -->
+        <section class="accounts">
+
+        </section>
+      
+        
+       
+        <!-- <a href="../views/Register.html"><input type="submit" value="Edit"></a><br>
+        <input type="submit" value="Save"> -->
     </section>
 
-    <footer id="footer">
-        <div id="footer-flex">
-        <div id="contact-flex" id="obj-cont">
-            <div id="img-cont">
-        <img src="../img/phone-call.png" id="phonecall" width="15px" height="15px"><p>Phone:+65 12345678</p><br>
-    </div>
-    <div id="img-cont">
-        <img src="../img/pin.png" id="pin" width="15px" height="15px"><p>location:xxxxxxxx</p><br>
-    </div>
-    <div id="img-cont">
-        <img src="../img/Mail.png" id="mail" width="15px" height="15px"><p>mail:IT_Hardware@gmail.com</p><br>
-        </div>
-    </div>
-
-    <div id="copyright" id="obj-cont">
-        <p>© Copyright 2021. All rights reserved to ITHardware.</p>
-    </div>
-
-    <div id="service" id="obj-cont">
-        <p><u>Customer Service</u></p>
-        <div id="service-cont">
-        <p>Contact Us</p><br>
-        </div>
-        <div id="service-cont">
-        <p>Help and advice</p><br>
-        </div>
-        <div id="service-cont">
-        <p>Return Policy</p><br>
-    </div>
-        <div id="service-cont">
-        <p>Terms and condition</p>
-    </div>
-    </div>
-</div>
-    </footer>
+    <%- include('./partials/footer'); %>
+    <script src='js/jquery.min.js'></script>
+    <script src='js/viewAcct.js'></script>
 </body>
 
 </html>

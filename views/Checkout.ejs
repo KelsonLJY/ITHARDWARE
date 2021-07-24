@@ -3,6 +3,8 @@
 
 <head>
     <title>IT Hardware</title>
+
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
     <style>
         body {
             background-color: white;
@@ -149,76 +151,66 @@
 </head>
 
 <body>
-    <header>
-        <nav id="nav">
-            <ul>
-                 <!-- <li>
-                    <a href="Home.html" title="Home">Home</a>
-                </li> -->
-                <li>
-                    <a href="Home.html" title="Home">Home</a>
-                </li>
-                <li>
-                    <a href="About.html" title="About">About</a>
-                </li>
-                <li>
-                    <a href="Items.html" title="Items">Items</a>
-                </li>
-                <li>
-                    <a href="Contact.html" title="Contact">Contact</a>
-                </li>
-                <li>
-                    <a href="Login.html" title="Login">Login</a>
-                </li>
-                <li>
-                    <a href="Register.html" title="Register">Register</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <%- include('./partials/head'); %>
+
     <section>
     
     
         <div id="cart">
-            <h2>Items in Cart</h2>
+            <h2>Items in Cart - Checkout</h2>
+            <form>
+                <label for="subtotal">Sub Total:</label>
+                <input type="text" id="subtotal" name="subtotal"  :value="total" disabled><br><br>
+                <label for="deliveryfee">Delivery Fee:</label>
+                <input type="text" id="deliveryfee" name="deliveryfee" :value="2" disabled><br><br>
+                <label for="deliveryadd">Delivery Location:</label>
+                <input type="text" id="deliveryadd" name="location" v-validate="'required'">
+                <span class="txt-danger" v-if="errors.has('location')">{{ errors.first('location') }}</span>
 
+                <br><br>
+               
+                <!-- <label for="deliverytime">Delivery Time:</label>
+                <input type="text" id="deliverytime" name="deliverytime"><br><br> -->
+                <label for="payment">Payment Method:</label>
+                <!-- <input type="text" id="payment" name="payment"><br><br> -->
+                <select name="payment_method" v-model="order.payment">
+                    <option value="NETS">NETS</option>
+                    <option value="DEBIT">Debit</option>
+                </select><br><br>
+
+                <label for="name_on_card">Name On Card:</label>
+                <input type="text" id="name_on_card" name="name_on_card" v-validate="'required'">
+                <span class="txt-danger" v-if="errors.has('name_on_card')">{{ errors.first('name_on_card') }}</span>
+
+                <br><br>
+
+                <label for="card_no">Card Number:</label>
+                <input type="text" id="card_no" name="card_number" v-validate="'required'">
+                <span class="txt-danger" v-if="errors.has('card_number')">{{ errors.first('card_number') }}</span>
+
+                <br><br>
+
+                <label for="expiry_date">Expiry Date (mm/dd):</label>
+                <input type="text" id="expiry_date" name="expiry_date" v-validate="'required'">
+                <span class="txt-danger" v-if="errors.has('expiry_date')">{{ errors.first('expiry_date') }}</span>
+
+                <br><br>
+
+                <label for="security_code">Security Code:</label>
+                <input type="text" id="security_code" name="secuirty_code" v-validate="'required'">
+                <span class="txt-danger" v-if="errors.has('secuirty_code')">{{ errors.first('secuirty_code') }}</span>
+                <br><br>
+                <button @click.prevent="onClickedPlaceOrder">Place Order</button>
+                <!-- <a href="PlaceOrder.ejs"><input type="submit" value="Place Order"></a> -->
+               
+            </form>
         </div>
     </section>
-    <footer id="footer">
-        <div id="footer-flex">
-        <div id="contact-flex" id="obj-cont">
-            <div id="img-cont">
-        <img src="../img/phone-call.png" id="phonecall" width="15px" height="15px"><p>Phone:+65 12345678</p><br>
-    </div>
-    <div id="img-cont">
-        <img src="../img/pin.png" id="pin" width="15px" height="15px"><p>location:xxxxxxxx</p><br>
-    </div>
-    <div id="img-cont">
-        <img src="../img/Mail.png" id="mail" width="15px" height="15px"><p>mail:IT_Hardware@gmail.com</p><br>
-        </div>
-    </div>
-
-    <div id="copyright" id="obj-cont">
-        <p>© Copyright 2021. All rights reserved to ITHardware.</p>
-    </div>
-
-    <div id="service" id="obj-cont">
-        <p><u>Customer Service</u></p>
-        <div id="service-cont">
-        <p>Contact Us</p><br>
-        </div>
-        <div id="service-cont">
-        <p>Help and advice</p><br>
-        </div>
-        <div id="service-cont">
-        <p>Return Policy</p><br>
-    </div>
-        <div id="service-cont">
-        <p>Terms and condition</p>
-    </div>
-    </div>
-</div>
-    </footer>
+    <%- include('./partials/footer'); %>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vee-validate@<3.0.0/dist/vee-validate.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

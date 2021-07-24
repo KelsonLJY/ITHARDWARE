@@ -1,0 +1,44 @@
+<header>
+    <nav id="nav">
+        <ul>
+             <!-- <li>
+                <a href="Home.html" title="Home">Home</a>
+            </li> -->
+            <li>
+                <a href="/" title="Home">Home</a>
+            </li>
+            <li >
+                <a href="/about" title="About">About</a>
+            </li>
+            <!-- <li class="dropdown">
+                <a href="Items.html" class="dropbtn"  title="Items">Items</a>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                  </div>
+            </li> -->
+            <li>
+                <a href="/items" title="Items">Items</a>
+            </li>
+                
+            <li>
+                <a href="/contact" title="Contact">Contact</a>
+            </li>
+          
+          
+            <%if (!locals.session.loggedin) { %>
+                <li><a href="/register" title="Register">Register</a></li>
+                <li><a href="/login" title="Login">Login</a></li>
+                
+            <% }
+            else{ %>
+                <li><a href="/view-account" title="ViewAcct">View Account</a></li>
+                <li ><a href="/logout" class="logout" title="Logout">Logout</a></li> 
+            <%}%>
+            <li>
+                <a href="/view-cart" title="View Cart">Cart</a>
+            </li>
+        </ul>
+    </nav>
+</header>
