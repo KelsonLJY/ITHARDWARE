@@ -1,6 +1,36 @@
 const router = require('express').Router()
 const isAuth = require('../middleware/auth').isAuth;
-
+const nodemailer = require('nodemailer');
+const sgMail = require('@sendgrid/mail')
+sgMail.setApiKey('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')
+const msg = {
+    to: 'ampyaephyonaing@gmail.com', // Change to your recipient
+    from: 'CT0345078@kaplan.edu.sg', // Change to your verified sender
+    subject: 'Sending with SendGrid is Fun',
+    text: 'and easy to do anywhere, even with Node.js',
+    html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+  }
+var transport = nodemailer.createTransport({
+    host: "smtp.googlemail.com",
+    port: 587,
+    auth: {
+        user: "USERNAME",
+        pass: "PASSWORD"
+    }
+  });
+router.get('/api/test-email', (req, res) =>{
+    transport.sendMail(msg, function(err, info) {
+        if (err) {  
+            res.send({
+                message : err
+            })
+        } else {
+            res.send({
+                message : "Success"
+            })
+        }
+    });
+})
 router.get('/' ,(req, res) => {
     res.render('Home')
 })
