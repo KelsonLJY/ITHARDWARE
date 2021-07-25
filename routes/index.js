@@ -52,12 +52,30 @@ router.get('/place-order' , isAuth ,(req, res) => {
 router.get('/contact' ,(req, res) => {
     res.render('Contact')
 })
+
+router.get('/helpadvice' ,(req, res) => {
+    res.render('helpadvice')
+})
+
+router.get('/returnpolicy' ,(req, res) => {
+    res.render('returnpolicy')
+})
+
+router.get('/termscondition' ,(req, res) => {
+    res.render('termscondition')
+})
+
+
 router.get('/view-cart' ,(req, res) => {
     res.render('ViewCart')
 })
 router.get('/view-account'  ,isAuth ,(req, res) => {
     res.render('ViewAcct')
 })
+router.get('/resetpass' ,(req, res) => {
+    res.render('resetpass')
+})
+
 router.get('/login' ,(req, res) => {
     res.render('login')
 })

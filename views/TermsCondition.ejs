@@ -59,34 +59,19 @@
             background-color: #F1EAE8;
             padding: 16px;
         }
-        #contactdetails{
-            padding: 20px;
-            padding-bottom: 100px;
-        }
 
-        #contactus h1 {
-            padding-left: 500px;
+        #case h2,
+        p {
+            padding-left: 175px;
             width: 70%;
             color: #534745;
         }
-        #ForgetPass{
-            padding-left: 500px;
-            width: 70%;
-            color: #534745;
-
-        }
-        #ForgetPass p{
-            padding-left: 10px;
-            width: 70%;
-            color: #534745;
-
-        }
-        #About {
+        #termscondition {
             /* background-color: #F1EAE8; */
             padding: 16px;
         }
 
-        #About h2,
+        #termscondition h2,
         p {
             padding-left: 175px;
             width: 70%;
@@ -142,9 +127,6 @@
         #footer-flex {
             display: flex;
         }
-        #contactinfo {
-            display: flex;
-        }
 
         #footer obj-cont {
             flex: 1;
@@ -159,6 +141,7 @@
         #footer img-cont {
             flex:1;
         }
+      
      
     </style>
 
@@ -167,23 +150,26 @@
 
 <body>
     <%- include('./partials/head'); %>
-
+    <section>
     
-    <section id="ForgetPass">
-        <h1>Forget Password</h1>
-        
-            <form  >
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email"><br><br>
-                <label for="dob">DOB:</label>
-                <input type="date" id="dob" name="dob"><br><br>
-                <input type="submit" value="Reset">
-               
-            </form>
-           
-        <p>Check the link sent to your email</p>
-    </section>
+    
+        <div id="termscondition">
+            <h2>Terms and condition</h2>
+            <p>Welcome to IT Hardware!
 
+                These terms and conditions outline the rules and regulations for the use of Company's Website.<br><br>
+                
+                By accessing this website we assume you accept these terms and conditions. Do not continue to use this website if you do not agree to take all of the terms and conditions stated on this page.<br>
+                
+                The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements:<br><br>
+                 “Customer”, “You” and “Your” refers to you, the person log on this website and compliant to the Company's terms and conditions. <br><br>
+                 “The Company”, “Ourselves”, “We”, “Our” and “Us”, refers to our Company. “Party”, “Parties”, or “Us”, refers to both the Customer and ourselves. <br><br>
+                 All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Customer in the most appropriate manner for the express purpose of meeting the Customer's needs in respect of provision of the Company's stated services.
+
+
+            </p><br>
+        </div>
+    </section>
     <%- include('./partials/footer'); %>
 </body>
 

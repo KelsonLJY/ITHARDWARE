@@ -59,34 +59,19 @@
             background-color: #F1EAE8;
             padding: 16px;
         }
-        #contactdetails{
-            padding: 20px;
-            padding-bottom: 100px;
-        }
 
-        #contactus h1 {
-            padding-left: 500px;
+        #case h2,
+        p {
+            padding-left: 175px;
             width: 70%;
             color: #534745;
         }
-        #ForgetPass{
-            padding-left: 500px;
-            width: 70%;
-            color: #534745;
-
-        }
-        #ForgetPass p{
-            padding-left: 10px;
-            width: 70%;
-            color: #534745;
-
-        }
-        #About {
+        #helpadvice {
             /* background-color: #F1EAE8; */
             padding: 16px;
         }
 
-        #About h2,
+        #helpadvice h2,
         p {
             padding-left: 175px;
             width: 70%;
@@ -142,9 +127,6 @@
         #footer-flex {
             display: flex;
         }
-        #contactinfo {
-            display: flex;
-        }
 
         #footer obj-cont {
             flex: 1;
@@ -159,6 +141,7 @@
         #footer img-cont {
             flex:1;
         }
+      
      
     </style>
 
@@ -167,23 +150,23 @@
 
 <body>
     <%- include('./partials/head'); %>
-
+    <section>
     
-    <section id="ForgetPass">
-        <h1>Forget Password</h1>
-        
-            <form  >
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email"><br><br>
-                <label for="dob">DOB:</label>
-                <input type="date" id="dob" name="dob"><br><br>
-                <input type="submit" value="Reset">
-               
-            </form>
-           
-        <p>Check the link sent to your email</p>
-    </section>
+    
+        <div id="helpadvice">
+            <h2>Help and Advice</h2>
+            <p>            If you have any enquiries about any of our items, please contact or email us. 
 
+                Our contact details are on our Contact page.  <br><br>
+                
+                Our staff members will be on call to assist you in your enquiry if you choose to call us.<br><br>
+                
+                If you email us, we will reply to you within 3-5 business days.<br><br>
+                
+                Thank you.
+            </p><br>
+        </div>
+    </section>
     <%- include('./partials/footer'); %>
 </body>
 
