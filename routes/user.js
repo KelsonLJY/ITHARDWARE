@@ -101,7 +101,7 @@ router
         to: tmpUser.email, // Change to your recipient
         from: 'amydev.me@gmail.com', // Change to your verified sender
         subject: 'Reset Password : IT HARDWARE',
-        html: `Dear ${tmpUser.full_name}, <br><br> To reset the password to your account, click the link below:<br> ${requrl}`,
+        html: `Dear ${tmpUser.full_name}, <br><br> To reset the password to your account, click the link below:<br> <a href="${requrl}">${requrl}</a>`,
       }
     transport.sendMail(msg, function(err, info) {
         if (err) {  
