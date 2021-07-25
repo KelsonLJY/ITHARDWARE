@@ -98,7 +98,7 @@ router
 
     let requrl = `${req.protocol}://${req.get('host')}/reset-new-password?id=${tmpUser._id}&token=${_token}`;
     const msg = {
-        to: 'ampyaephyonaing@gmail.com', // Change to your recipient
+        to: tmpUser.email, // Change to your recipient
         from: 'amydev.me@gmail.com', // Change to your verified sender
         subject: 'Reset Password : IT HARDWARE',
         html: `Dear ${tmpUser.full_name}, <br><br> To reset the password to your account, click the link below:<br> ${requrl}`,
