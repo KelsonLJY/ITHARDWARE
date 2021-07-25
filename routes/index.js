@@ -2,53 +2,7 @@ const router = require('express').Router()
 const isAuth = require('../middleware/auth').isAuth;
 const nodemailer = require('nodemailer');
 const Item=require('../model/Item')
-const { encrypt, decrypt } = require('../config/crypto');
-const msg = {
-    to: 'ampyaephyonaing@gmail.com', // Change to your recipient
-    from: ' amydev.me@gmail.com', // Change to your verified sender
-    subject: 'Reset Password',
-    text: 'Click here to reset passwordssssssss',
-    html: 'Click here to reset password',
-  }
-var transport = nodemailer.createTransport({
-    host: "smtp.googlemail.com",
-    port: 587,
-    auth: {
-        user: "amydev.me@gmail.com",
-        pass: "Amy123!*"
-    }
-  });
-router.get('/api/test-email', (req, res) =>{
-    const hash = encrypt('Hello World!');
-    console.log('Hash', hash)
 
-    const text = decrypt(hash);
-
-    console.log('text', text)
-
-     res.send({
-        message : "Success"
-    })
-    // let requrl = `${req.protocol}://${req.get('host')}/reset-password/${crypto.randomBytes(20).toString('hex')}`;
-    // const msg = {
-    //     to: 'ampyaephyonaing@gmail.com', // Change to your recipient
-    //     from: 'amydev.me@gmail.com', // Change to your verified sender
-    //     subject: 'Reset Password',
-    //     html: `To reset the password to your account, click the link below:<br> ${requrl}`,
-    //   }
-    // transport.sendMail(msg, function(err, info) {
-    //     if (err) {  
-    //         res.send({
-    //             message : err
-    //         })
-    //     } else {
-    //         res.send({
-    //             message : "Success"
-    //         })
-    //     }
-    // });
-    
-})
 
 router.get('/sent-reset-password' ,(req, res) => {
     
