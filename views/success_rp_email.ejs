@@ -3,8 +3,6 @@
 
 <head>
     <title>IT Hardware</title>
-    <link href="/css/style.css" rel="stylesheet" type="text/css">
-
     <style>
         body {
             background-color: white;
@@ -61,29 +59,14 @@
             background-color: #F1EAE8;
             padding: 16px;
         }
-        #contactdetails{
-            padding: 20px;
-            padding-bottom: 100px;
-        }
 
-        #contactus h1 {
-            padding-left: 500px;
+        #case h2,
+        p {
+            padding-left: 175px;
             width: 70%;
             color: #534745;
         }
-        .ForgetPass{
-            padding-left: 500px;
-            width: 70%;
-            color: #534745;
-
-        }
-        .ForgetPass p{
-            padding-left: 10px;
-            width: 70%;
-            color: #534745;
-
-        }
-        #About {
+        #cart {
             /* background-color: #F1EAE8; */
             padding: 16px;
         }
@@ -144,9 +127,6 @@
         #footer-flex {
             display: flex;
         }
-        #contactinfo {
-            display: flex;
-        }
 
         #footer obj-cont {
             flex: 1;
@@ -161,6 +141,7 @@
         #footer img-cont {
             flex:1;
         }
+      
      
     </style>
 
@@ -170,34 +151,18 @@
 <body>
     <%- include('./partials/head'); %>
 
+    <section>
     
-    <section class="ForgetPass" id="app">
-        <h1>Forget Password</h1>
-        <div style="height:50px;background-color:#F8D7DA;width:500px !important;margin-bottom:5px;" v-if="message">
-            <p  style="color:black;margin-top:5px;">{{message}}</p>
-        </div>
-            <form  >
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email" v-model="user.email" v-validate="'required|email'"><br><br>
-                <span class="txt-danger" v-if="errors.has('email')">{{ errors.first('email') }}</span><br>
-
-                <label for="dob">DOB:</label>
-                <input type="date" id="dob" name="dob" v-model="user.dob" v-validate="'required'"><br><br>
-                <span class="txt-danger" v-if="errors.has('dob')">Date Of Birth field required.</span><br>
-
-                <input type="submit" value="Reset" @click.prevent="onClickedReset">
-
+    
+        <div id="placeorder">
+            <h2>Success</h2><br/>
+            <h4>Password reset request was sent successfully.</h4>
+            <br/>
+            <h4>Please check your email to reset your password</h4>
             </form>
-           
-        <p>Check the link sent to your email</p>
+        </div>
     </section>
-
     <%- include('./partials/footer'); %>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vee-validate@<3.0.0/dist/vee-validate.js"></script>
-    <script src="js/reset_pass.js"></script>
 </body>
 
 </html>

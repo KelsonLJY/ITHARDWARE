@@ -7,6 +7,10 @@ const UserSchema=new mongoose.Schema({
     order_date:{
         type: Date,
         required: true,
+    },
+    delivery_date :{
+        type: Date,
+        required : true
     }
 });
 
