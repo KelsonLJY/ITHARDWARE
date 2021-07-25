@@ -1,44 +1,23 @@
-<header>
-    <nav id="nav">
-        <ul>
-             <!-- <li>
-                <a href="Home.html" title="Home">Home</a>
-            </li> -->
-            <li>
-                <a href="/" title="Home">Home</a>
-            </li>
-            <li >
-                <a href="/about" title="About">About</a>
-            </li>
-            <!-- <li class="dropdown">
-                <a href="Items.html" class="dropbtn"  title="Items">Items</a>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                  </div>
-            </li> -->
-            <li>
-                <a href="/items" title="Items">Items</a>
-            </li>
-                
-            <li>
-                <a href="/contact" title="Contact">Contact</a>
-            </li>
-          
-          
-            <%if (!locals.session.loggedin) { %>
-                <li><a href="/register" title="Register">Register</a></li>
-                <li><a href="/login" title="Login">Login</a></li>
-                
-            <% }
-            else{ %>
-                <li><a href="/view-account" title="ViewAcct">View Account</a></li>
-                <li ><a href="/logout" class="logout" title="Logout">Logout</a></li> 
-            <%}%>
-            <li>
-                <a href="/view-cart" title="View Cart">Cart</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+<header id="header_wrapper">
+    <div class="container">
+      <div class="header_box">
+        <div class="logo"><a href="#"><img src="img/logo.png" alt="logo"></a></div>
+        <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+          <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          </div>
+          <div id="main-nav" class="collapse navbar-collapse navStyle">
+              <ul class="nav navbar-nav" id="mainNav">
+                <li class="active"><a href="#hero_section" class="scroll-link">Home</a></li>
+                <li><a href="#aboutUs" class="scroll-link">About Us</a></li>
+                <li><a href="#service" class="scroll-link">Services</a></li>
+                <li><a href="#Portfolio" class="scroll-link">Portfolio</a></li>
+                <li><a href="#clients" class="scroll-link">Clients</a></li>
+                <li><a href="#team" class="scroll-link">Team</a></li>
+                <li><a href="#contact" class="scroll-link">Contact</a></li>
+              </ul>
+        </div>
+       </nav>
+      </div>
+    </div>
+  </header>

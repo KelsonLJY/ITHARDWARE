@@ -10,14 +10,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^7.4.5",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "cookie-session": "^1.4.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "init": "^0.1.2",
     "express-session": "^1.17.2",
+    "init": "^0.1.2",
+    "mailgun-js": "^0.22.0",
     "mongoose": "^5.13.2",
+    "nodemailer": "^6.6.3",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "socket.io": "^2.2.0"
@@ -27,4 +30,3 @@
     "nodemon": "^2.0.12"
   }
 }
-  
