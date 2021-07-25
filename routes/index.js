@@ -4,10 +4,10 @@ const nodemailer = require('nodemailer');
 
 const msg = {
     to: 'ampyaephyonaing@gmail.com', // Change to your recipient
-    from: 'CT0345078@kaplan.edu.sg', // Change to your verified sender
-    subject: 'Sending with SendGrid is Fun',
-    text: 'and easy to do anywhere, even with Node.js',
-    html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+    from: ' amydev.me@gmail.com', // Change to your verified sender
+    subject: 'Reset Password',
+    text: 'Click here to reset password',
+    html: 'Click here to reset password',
   }
 var transport = nodemailer.createTransport({
     host: "smtp.googlemail.com",
