@@ -108,7 +108,7 @@ router.get('/view-account'  ,isAuth ,(req, res) => {
     res.render('ViewAcct')
 })
 router.get('/resetpass' ,(req, res) => {
-    res.render('resetpass')
+    res.render('ResetPass')
 })
 
 router.get('/login' ,(req, res) => {
