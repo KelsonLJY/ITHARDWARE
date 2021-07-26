@@ -29,7 +29,7 @@ var myObject = new Vue({
 
             // Get Localstorage Items
             let storageItems = JSON.parse(localStorage.getItem('items'));
-         
+            
             tmp.qty = 1;
             
             /**  If items don't have in local storage.
@@ -49,8 +49,10 @@ var myObject = new Vue({
                  *      PUSH current item into storageItems array
                  */  
                  if(storageItems.length > 0){
-                    let itemIndex = storageItems.findIndex(e=> e.id == item.id);
+                    
+                    let itemIndex = storageItems.findIndex(e=> e._id == item._id);
                     if(itemIndex > -1){
+                        
                         tmp.qty = parseInt(storageItems[itemIndex].qty) + 1;
                    
                         storageItems[itemIndex] = tmp;

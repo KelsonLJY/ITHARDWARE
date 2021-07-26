@@ -164,15 +164,10 @@
                 <label for="deliveryfee">Delivery Fee:</label>
                 <input type="text" id="deliveryfee" name="deliveryfee" :value="2" disabled><br><br>
                 <label for="deliveryadd">Delivery Location:</label>
-                <input type="text" id="deliveryadd" name="location" v-validate="'required'">
+                <input type="text" id="deliveryadd" name="location" v-validate="'required'" v-model="order.delivery_address">
                 <span class="txt-danger" v-if="errors.has('location')">{{ errors.first('location') }}</span>
-
                 <br><br>
-               
-                <!-- <label for="deliverytime">Delivery Time:</label>
-                <input type="text" id="deliverytime" name="deliverytime"><br><br> -->
                 <label for="payment">Payment Method:</label>
-                <!-- <input type="text" id="payment" name="payment"><br><br> -->
                 <select name="payment_method" v-model="order.payment">
                     <option value="NETS">NETS</option>
                     <option value="DEBIT">Debit</option>
@@ -181,7 +176,6 @@
                 <label for="name_on_card">Name On Card:</label>
                 <input type="text" id="name_on_card" name="name_on_card" v-validate="'required'">
                 <span class="txt-danger" v-if="errors.has('name_on_card')">{{ errors.first('name_on_card') }}</span>
-
                 <br><br>
 
                 <label for="card_no">Card Number:</label>
