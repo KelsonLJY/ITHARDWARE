@@ -15,6 +15,7 @@ $(document).ready(function () {
                     let url = `/edit-user`;
                     $(".accounts").append(`
                     <article>
+
                        <h2><a href="${url}">${data.full_name}</a></h2>
                          <div>
                             dob: ${data.dob}<br>
