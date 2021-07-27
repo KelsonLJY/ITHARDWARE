@@ -96,7 +96,7 @@ router
     })
     .catch(err=>console.log(err))
 
-    let requrl = `${req.protocol}://${req.get('host')}/reset-new-password?id=${tmpUser._id}&token=${_token}`;
+    let requrl = `${req.protocol}s://${req.get('host')}/reset-new-password?id=${tmpUser._id}&token=${_token}`;
     const msg = {
         to: tmpUser.email, // Change to your recipient
         from: 'amydev.me@gmail.com', // Change to your verified sender

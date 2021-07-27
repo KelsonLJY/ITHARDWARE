@@ -2,6 +2,7 @@ const router = require('express').Router()
 const isAuth = require('../middleware/auth').isAuth;
 
 const Item=require('../model/Item')
+var url = require('url');
 
 router.get('/api/update-qty', (req, res) => {
     Item.updateMany({},{"$set":{"available_qty": 20}}).exec();
