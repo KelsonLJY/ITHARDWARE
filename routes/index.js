@@ -1,8 +1,12 @@
 const router = require('express').Router()
 const isAuth = require('../middleware/auth').isAuth;
-const nodemailer = require('nodemailer');
+
 const Item=require('../model/Item')
 
+router.get('/api/update-qty', (req, res) => {
+    Item.updateMany({},{"$set":{"available_qty": 20}}).exec();
+    res.send('success')
+})
 
 router.get('/sent-reset-password' ,(req, res) => {
     

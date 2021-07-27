@@ -19,6 +19,10 @@ const ItemSchema=new mongoose.Schema({
     category : {
         type : String,
         required : true
+    },
+    available_qty : {
+        type : Number,
+        default:0
     }
 });
 
