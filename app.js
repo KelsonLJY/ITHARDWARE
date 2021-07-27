@@ -33,7 +33,7 @@ app.use(function (req, res, next) {
 app.use(express.static('public'))
 app.use(require("./routes/index"))
 app.use(require("./routes/user"))
-
+app.use(require("./routes/order"))
 require("./config/passport")
 
 

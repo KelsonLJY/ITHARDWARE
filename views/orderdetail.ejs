@@ -157,54 +157,57 @@
     
     
         <div id="cart">
-            <h2>Items in Cart - Checkout</h2>
-            <form>
-                <label for="subtotal">Sub Total:</label>
-                <input type="text" id="subtotal" name="subtotal"  :value="total" disabled><br><br>
-                <label for="deliveryfee">Delivery Fee:</label>
-                <input type="text" id="deliveryfee" name="deliveryfee" :value="2" disabled><br><br>
-                <label for="deliveryadd">Delivery Location:</label>
-                <input type="text" id="deliveryadd" name="location" v-validate="'required'" v-model="order.delivery_address">
-                <span class="txt-danger" v-if="errors.has('location')">{{ errors.first('location') }}</span>
-                <br><br>
-                <label for="payment">Payment Method:</label>
-                <select name="payment_method" v-model="order.payment">
-                    <option value="NETS">NETS</option>
-                    <option value="DEBIT">Debit</option>
-                </select><br><br>
-
-                <label for="name_on_card">Name On Card:</label>
-                <input type="text" id="name_on_card" name="name_on_card" v-validate="'required'">
-                <span class="txt-danger" v-if="errors.has('name_on_card')">{{ errors.first('name_on_card') }}</span>
-                <br><br>
-
-                <label for="card_no">Card Number:</label>
-                <input type="text" id="card_no" name="card_number" v-validate="'required'">
-                <span class="txt-danger" v-if="errors.has('card_number')">{{ errors.first('card_number') }}</span>
-
-                <br><br>
-
-                <label for="expiry_date">Expiry Date (mm/dd):</label>
-                <input type="text" id="expiry_date" name="expiry_date" v-validate="'required'">
-                <span class="txt-danger" v-if="errors.has('expiry_date')">{{ errors.first('expiry_date') }}</span>
-
-                <br><br>
-
-                <label for="security_code">Security Code:</label>
-                <input type="text" id="security_code" name="secuirty_code" v-validate="'required'">
-                <span class="txt-danger" v-if="errors.has('secuirty_code')">{{ errors.first('secuirty_code') }}</span>
-                <br><br>
-                <button @click.prevent="onClickedPlaceOrder">Place Order</button>
-                <!-- <a href="PlaceOrder.ejs"><input type="submit" value="Place Order"></a> -->
+       
+            <section id="ViewCart">
+              
                
-            </form>
+                   
+                <table>
+                    <tr>
+                        
+                        <td colspan="2"><span style="color:blue;font-size:24px;font-weight: bold;">Order No :   {{order._id}}
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td colspan="2">
+                            <span>Order Date : {{formatDate(order.order_date)}}</span><br>
+                            <span>Delivery Date : {{formatDate(order.order_date)}}</span><br>
+                        </td>
+                    </tr>
+                    <tr v-for="(detail, index) in order.details">
+                        
+                        <td><img :src="detail.item.img_url" width="100px" height="100px" ></td>
+                        <td>{{detail.item.descriptions}}<br>
+                            <span>Price : ${{detail.price}}</span><br>
+                            <span>Qty : {{detail.qty}}</span><br>
+                            <span>Amount : {{detail.amount}}</span>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><hr/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span style="font-weight: bold;">Total : ${{order.total}}</span><br>
+                            <span style="font-weight: bold;">Delivery Fee : ${{order.delivery_fee}}</span><br> 
+                            <span style="font-weight: bold;">Net Amount : ${{ +order.total + +order.delivery_fee}}</span><br>
+                        </td>
+                    </tr>
+                </table>
+            </section>
         </div>
     </section>
     <%- include('./partials/footer'); %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vee-validate@<3.0.0/dist/vee-validate.js"></script>
-    <script src="js/cart.js"></script>
+
+    
+    <script src="js/orderdetail.js"></script>
 </body>
 
 </html>

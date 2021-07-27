@@ -7,7 +7,7 @@ var myObject = new Vue({
         payment_types : ['NETS', 'DEBIT'],
         order : {
             payment : "NETS",
-            delivery_date : null,
+            delivery_address : null
         },
         user : {
             email :  null,
@@ -40,7 +40,16 @@ var myObject = new Vue({
         onClickedPlaceOrder(){
             this.$validator.validateAll().then(success => {
                 if(success){
-                    window.location.href = window.location.origin + '/place-order';
+                    
+                    axios.post('/api/confirm-order', {
+                        total : this.total,
+                        items : JSON.stringify(this.items)
+                    }).then(({data}) => {  
+                        localStorage.removeItem('items')
+                        window.location.href = window.location.origin + '/place-order';
+                    }).catch(error => {
+                        this.message = error.response.data.message;
+                    })
                 }
             });
         }
@@ -58,14 +67,14 @@ var myObject = new Vue({
     mounted(){
         // this.getUser();
         this.items = JSON.parse(localStorage.getItem('items'));
-        let delivery_date = new Date();
-        var numberOfDaysToAdd = 6;
-        delivery_date.setDate(delivery_date.getDate() + numberOfDaysToAdd); 
+        // let delivery_date = new Date();
+        // var numberOfDaysToAdd = 6;
+        // delivery_date.setDate(delivery_date.getDate() + numberOfDaysToAdd); 
 
-        var dd = delivery_date.getDate();
-        var mm = delivery_date.getMonth() + 1;
-        var y = delivery_date.getFullYear();
+        // var dd = delivery_date.getDate();
+        // var mm = delivery_date.getMonth() + 1;
+        // var y = delivery_date.getFullYear();
 
-        this.order.delivery_date = dd + '/'+ mm + '/'+ y;
+        // this.order.delivery_date = dd + '/'+ mm + '/'+ y;
     }
 })

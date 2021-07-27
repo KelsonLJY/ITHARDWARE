@@ -81,6 +81,12 @@ router.get('/logout', (req, res, next) => {
     res.redirect('/login');
 })
 
+router.get('/orders', isAuth, (req, res, next) => {
+    res.render('ordered_list')
+})
+router.get('/order-detail', isAuth, (req, res, next) => {
+    res.render('orderdetail')
+})
 router.get('/api/get-items',  (req, res, next) => {
     Item.find({}, (err, items) => {
         res.send({
@@ -88,5 +94,7 @@ router.get('/api/get-items',  (req, res, next) => {
         })
     });
 })
+
+
 
 module.exports=router;
