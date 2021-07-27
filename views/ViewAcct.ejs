@@ -19,7 +19,7 @@
             margin: 0;
             padding-top: 30px;
             overflow: hidden;
-            background-color:darkcyan;
+            background-color: darkcyan;
             height: 80px;
             width: 100%;
             padding-right: 50px;
@@ -46,8 +46,7 @@
         }
 
         #banner {
-            background-color:white;
-            /*             width: 500%;*/
+            background-color: white;
         }
 
         #bannerlogo {
@@ -59,7 +58,8 @@
             background-color: #F1EAE8;
             padding: 16px;
         }
-        #contactdetails{
+
+        #contactdetails {
             padding: 20px;
             padding-bottom: 100px;
         }
@@ -69,14 +69,15 @@
             width: 70%;
             color: #534745;
         }
-        #ViewAcct{
+
+        #ViewAcct {
             padding-left: 500px;
             width: 70%;
             color: #534745;
 
         }
+
         #About {
-            /* background-color: #F1EAE8; */
             padding: 16px;
         }
 
@@ -91,54 +92,47 @@
             background-color: darkcyan;
             margin-top: 10px;
             padding: 10px;
-            position:absolute;
+            position: relative;
             bottom: 0;
             width: 100%;
         }
-        #footer p{
-           color: white;
+
+        #footer p {
+            color: white;
         }
 
         #contact {
             margin: 0;
             overflow: hidden;
             background-color: darkcyan;
-            /* height: 60px; */
             width: 100%;
             color: #CCAE93;
-             padding-left: 10px; 
+            padding-left: 10px;
 
         }
-     #copyright {
+
+        #copyright {
             margin: 0;
             overflow: hidden;
             background-color: darkcyan;
-            /* height: 60px; */
             width: 100%;
             color: #CCAE93;
             padding-top: 100px;
             padding-left: 150px;
         }
-        /* #service h4{
-            margin: 0;
-            overflow: hidden;
-            background-color: darkcyan;
-            /* height: 60px; */
-            /* color: #CCAE93;
-            padding-left: 150px; 
-        } */
+
         #service {
             margin: 0;
             overflow: hidden;
             background-color: darkcyan;
-            /* height: 60px; */
             color: #CCAE93;
-            padding-right: 150px; 
+            padding-right: 150px;
         }
-     
+
         #footer-flex {
             display: flex;
         }
+
         #contactinfo {
             display: flex;
         }
@@ -146,17 +140,15 @@
         #footer obj-cont {
             flex: 1;
         }
-        /* #contact-flex {
-            display: flex;
-        } */
-          #contact-flex p {
+
+        #contact-flex p {
             padding-bottom: 10px;
             padding-left: 20px;
         }
+
         #footer img-cont {
-            flex:1;
+            flex: 1;
         }
-     
     </style>
 
 
@@ -165,36 +157,27 @@
 <body>
     <%- include('./partials/head'); %>
 
-    
-    <section id="ViewAcct">
-        
 
-        <h1>Your Account</h1>
-        <!-- <form  >
-            <label for="email">Your Email:</label>
-            <input type="text" id="email" name="email"><br><br>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br><br>
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location"><br><br>
-           
-        </form> -->
-        <section class="accounts">
+        <section id="ViewAcct">
 
+
+            <h1>Your Account</h1>
+
+            <section class="accounts">
+
+            </section>
+
+
+
+
+            <h2><a href="/orders">My Orders</a></h2>
         </section>
-      
-        
-       
-        <!-- <a href="../views/Register.html"><input type="submit" value="Edit"></a><br>
-        <input type="submit" value="Save"> -->
-        <h2><a href="/orders">My Orders</a></h2>
-    </section>
 
-    
 
-    <%- include('./partials/footer'); %>
-    <script src='js/jquery.min.js'></script>
-    <script src='js/viewAcct.js'></script>
+
+        <%- include('./partials/footer'); %>
+            <script src='js/jquery.min.js'></script>
+            <script src='js/viewAcct.js'></script>
 </body>
 
 </html>
