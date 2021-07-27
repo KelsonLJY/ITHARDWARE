@@ -5,7 +5,10 @@ var myObject = new Vue({
     data: {
         orders : []
     },
-    methods:{           
+    methods:{          
+        formatDate(val){
+            return moment(val).format('DD/MM/YYYY');
+        }  , 
         getOrders(){
             axios.get('/api/get-orders').then(({data}) => {
                 this.orders = data;

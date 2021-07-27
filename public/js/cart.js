@@ -40,7 +40,9 @@ var myObject = new Vue({
         onClickedPlaceOrder(){
             this.$validator.validateAll().then(success => {
                 if(success){
+                    
                     axios.post('/api/confirm-order', {
+                        total : this.total,
                         items : JSON.stringify(this.items)
                     }).then(({data}) => {  
                         localStorage.removeItem('items')

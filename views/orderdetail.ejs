@@ -144,14 +144,7 @@
             flex:1;
         }
       
-        table {
-          border-collapse: collapse;
-          width : 100%;
-        }
-
-        tr{
-          border-bottom: 1px solid black;
-        }
+     
     </style>
 
 
@@ -164,23 +157,46 @@
     
     
         <div id="cart">
-        <h1 v-show="orders.length == 0">No items!!!</h1> 
-           <section id="ViewCart" v-show="orders.length > 0">
+       
+            <section id="ViewCart">
               
-                <form>
-                    <table>
-                        <tr v-for="(item, index) in orders">
-                           
-                            <td>Order No. <a :href="'/order-detail?order_id='+ item._id" style="color:blue">{{item._id}}</a><br>
-                                <span>Order Date : {{formatDate(item.order_date)}}</span><br>
-                                <span>Delivery Date : {{formatDate(item.order_date)}}</span><br>
-                                <span>Total : ${{item.total}}</span><br>
-                                <span>Delivery Fee : ${{item.delivery_fee}}</span><br>
-                                <span>Net Amount : ${{ +item.total + +item.delivery_fee}}</span><br>
-                            </td>
-                        </tr>
-                    </table>
-                </form>
+               
+                   
+                <table>
+                    <tr>
+                        
+                        <td colspan="2"><span style="color:blue;font-size:24px;font-weight: bold;">Order No :   {{order._id}}
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                        <td colspan="2">
+                            <span>Order Date : {{formatDate(order.order_date)}}</span><br>
+                            <span>Delivery Date : {{formatDate(order.order_date)}}</span><br>
+                        </td>
+                    </tr>
+                    <tr v-for="(detail, index) in order.details">
+                        
+                        <td><img :src="detail.item.img_url" width="100px" height="100px" ></td>
+                        <td>{{detail.item.descriptions}}<br>
+                            <span>Price : ${{detail.price}}</span><br>
+                            <span>Qty : {{detail.qty}}</span><br>
+                            <span>Amount : {{detail.amount}}</span>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><hr/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <span style="font-weight: bold;">Total : ${{order.total}}</span><br>
+                            <span style="font-weight: bold;">Delivery Fee : ${{order.delivery_fee}}</span><br> 
+                            <span style="font-weight: bold;">Net Amount : ${{ +order.total + +order.delivery_fee}}</span><br>
+                        </td>
+                    </tr>
+                </table>
             </section>
         </div>
     </section>
@@ -189,7 +205,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vee-validate@<3.0.0/dist/vee-validate.js"></script>
-    <script src="js/order.js"></script>
+
+    
+    <script src="js/orderdetail.js"></script>
 </body>
 
 </html>
