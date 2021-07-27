@@ -67,8 +67,6 @@ var myObject = new Vue({
                     localStorage.setItem('items', JSON.stringify(storageItems));
                 }
             }
-
-            
         }
     },
     mounted(){

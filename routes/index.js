@@ -33,7 +33,32 @@ router.get('/about' ,(req, res) => {
 router.get('/items' ,(req, res) => {
     res.render('Items')
 })
-router.get('/delivery-info' ,(req, res) => {
+router.get('/delivery-info' ,async (req, res) => {
+      // let flag = true;
+
+    // let itemIds = [];
+
+    // for(let i=0, count = items.length ; i > count ; i++){
+    //     itemIds.push(mongoose.Types.ObjectId(items[i]._id));
+    // }
+
+    // Item.find({
+    //     '_id': { $in: itemIds}
+    // })
+    let flag = true;
+    await items.forEach( async (e) => {
+        let item = await Item.find({_id : e._id});
+        if(item){
+            if(e.qty > item.available_qty){
+                flag = false;
+                return;
+            }
+        }
+       
+    })
+    if(!flag){
+        res.status(422).send('Order unsuccessful!!')
+    }   
     res.render('Checkout')
 })
 router.get('/place-order' , isAuth ,(req, res) => {
@@ -60,7 +85,7 @@ router.get('/termscondition' ,(req, res) => {
 })
 
 
-router.get('/view-cart' ,(req, res) => {
+router.get('/view-cart' ,isAuth ,(req, res) => {
     res.render('ViewCart')
 })
 router.get('/view-account'  ,isAuth ,(req, res) => {
@@ -97,6 +122,60 @@ router.get('/api/get-items',  (req, res, next) => {
             items : items
         })
     });
+})
+router.get('/checkout-failed', isAuth, (req, res, next) => {
+    res.render('failedcheckout')
+})
+router.post('/api/validate-qty' ,async (req, res) => {
+    // let flag = true;
+
+    // let itemIds = [];
+
+    // for(let i=0, count = items.length ; i > count ; i++){
+    //     itemIds.push(mongoose.Types.ObjectId(items[i]._id));
+    // }
+
+    // Item.find({
+    //     '_id': { $in: itemIds}
+    // })
+    const order = req.body;
+    const items = JSON.parse(order.items);
+    let flag = true;
+    let count =   items.length;
+    for(let i=0; i < count ; i++){
+        const _item = items[i];
+
+        let item = await Item.findOne({_id : _item._id}).exec();
+      
+        if(item){
+            
+            // console.log(`QTY ${_item.qty}, Available Qty ${item.available_qty}`)
+            if(+_item.qty > +item.available_qty){
+
+                flag = false;
+                break;
+            }
+        }
+    }
+
+
+    //     let item = await Item.findOne({_id : e._id}).exec();
+    //     if(item){
+    //         console.log(`QTY ${e.qty}, Available Qty ${item.available_qty}`)
+    //         console.log(+e.qty > +item.available_qty)
+
+    //         if(+e.qty > +item.available_qty){
+    //             flag = false;
+    //             return;
+    //         }
+    //     }
+    // })
+    if(!flag){
+        res.status(422).send('Order unsuccessful!!')
+    }  else{
+        res.send('Order successful!!')
+    } 
+
 })
 
 

@@ -28,7 +28,15 @@ var myObject = new Vue({
         },
         onClickedCheckout(){
             localStorage.setItem('items', JSON.stringify(this.items));
-            window.location.href = window.location.origin + '/delivery-info';
+            axios.post('/api/validate-qty', {
+                items : JSON.stringify(this.items)
+            }).then(({data}) => {  
+                  window.location.href = window.location.origin + '/delivery-info';
+            }).catch(error => {
+                // this.message = error.response.data.message;
+               
+                window.location.href = window.location.origin + '/checkout-failed';
+            })
         },
         getUser(){
             axios.get('/api/user-editprofile').then(({data}) => {

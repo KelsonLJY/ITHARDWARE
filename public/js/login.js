@@ -14,7 +14,7 @@ var myObject = new Vue({
             
             this.$validator.validateAll().then(success => {
                 if(success){
-                    localStorage.removeItem('items')
+                    
                     axios.post('/api/login', this.user).then(({data}) => {
                         window.location.href = window.location.origin;
                     }).catch(error => {
