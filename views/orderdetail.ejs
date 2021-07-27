@@ -160,7 +160,7 @@
        
             <section id="ViewCart">
               
-               
+                <h2>Order Details</h2>
                    
                 <table>
                     <tr>
@@ -172,7 +172,7 @@
                         
                         <td colspan="2">
                             <span>Order Date : {{formatDate(order.order_date)}}</span><br>
-                            <span>Delivery Date : {{formatDate(order.order_date)}}</span><br>
+                            <span>Delivery On : {{formatDate(order.delivery_date)}}</span><br>
                         </td>
                     </tr>
                     <tr v-for="(detail, index) in order.details">

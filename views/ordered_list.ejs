@@ -166,14 +166,14 @@
         <div id="cart">
         <h1 v-show="orders.length == 0">No items!!!</h1> 
            <section id="ViewCart" v-show="orders.length > 0">
-              
+            <h2>My Orders</h2>
                 <form>
                     <table>
                         <tr v-for="(item, index) in orders">
                            
                             <td>Order No. <a :href="'/order-detail?order_id='+ item._id" style="color:blue">{{item._id}}</a><br>
                                 <span>Order Date : {{formatDate(item.order_date)}}</span><br>
-                                <span>Delivery Date : {{formatDate(item.order_date)}}</span><br>
+                                <span>Delivery On : {{formatDate(item.delivery_date)}}</span><br>
                                 <span>Total : ${{item.total}}</span><br>
                                 <span>Delivery Fee : ${{item.delivery_fee}}</span><br>
                                 <span>Net Amount : ${{ +item.total + +item.delivery_fee}}</span><br>
