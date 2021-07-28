@@ -34,31 +34,6 @@ router.get('/items' ,(req, res) => {
     res.render('Items')
 })
 router.get('/delivery-info' ,async (req, res) => {
-      // let flag = true;
-
-    // let itemIds = [];
-
-    // for(let i=0, count = items.length ; i > count ; i++){
-    //     itemIds.push(mongoose.Types.ObjectId(items[i]._id));
-    // }
-
-    // Item.find({
-    //     '_id': { $in: itemIds}
-    // })
-    let flag = true;
-    await items.forEach( async (e) => {
-        let item = await Item.find({_id : e._id});
-        if(item){
-            if(e.qty > item.available_qty){
-                flag = false;
-                return;
-            }
-        }
-       
-    })
-    if(!flag){
-        res.status(422).send('Order unsuccessful!!')
-    }   
     res.render('Checkout')
 })
 router.get('/place-order' , isAuth ,(req, res) => {
