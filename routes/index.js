@@ -60,7 +60,7 @@ router.get('/termscondition' ,(req, res) => {
 })
 
 
-router.get('/view-cart' ,isAuth ,(req, res) => {
+router.get('/view-cart' ,(req, res) => {
     res.render('ViewCart')
 })
 router.get('/view-account'  ,isAuth ,(req, res) => {
