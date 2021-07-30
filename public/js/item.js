@@ -32,6 +32,7 @@ var myObject = new Vue({
             
             tmp.qty = 1;
             tmp.available_qty = tmp.available_qty;
+            
             /**  If items don't have in local storage.
              * Push current item into storageItems array
              * SET storageItems in local storage

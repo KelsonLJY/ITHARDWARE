@@ -33,7 +33,7 @@ router.post('/api/confirm-order', isAuth, async (req,res)=>{
         const _order = await Order.updateOne({_id : _newOrder._id}, {$push: { details: orderItem._id }});
 
         const _item = await Item.findOne({_id : e._id});
-        console.log(_item)
+        
         await Item.updateOne({_id : _item._id}, {$set: { available_qty: +_item.available_qty - +e.qty }});
     })
     res.send('Success')
