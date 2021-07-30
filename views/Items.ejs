@@ -162,10 +162,10 @@
                 <tr v-for="item in items">
                     <td><img :src="item.img_url" width="100px" height="100px" ></td>
                 
-                    <td>{{item.descriptions}}</td>
+                    <td>{{item.descriptions}}<br>Available Qty : <span style="color:blue;font-weight: bold;">{{item.available_qty}}</span></td>
                     <td>${{item.price}}</td>
                     <td>  
-                        <a href="/view-cart">   <button @click="onClickedAddToCard(item)"><img src="../img/cart.png" width="15px" height="15px" ></button></a>
+                        <button @click="onClickedAddToCard(item)" :disabled="+item.available_qty == 0"><img src="../img/cart.png" width="15px" height="15px" ></button>
                     </td>
                 </tr>
                 

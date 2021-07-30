@@ -31,7 +31,7 @@ var myObject = new Vue({
             let storageItems = JSON.parse(localStorage.getItem('items'));
             
             tmp.qty = 1;
-            
+            tmp.available_qty = tmp.available_qty;
             /**  If items don't have in local storage.
              * Push current item into storageItems array
              * SET storageItems in local storage
@@ -67,6 +67,7 @@ var myObject = new Vue({
                     localStorage.setItem('items', JSON.stringify(storageItems));
                 }
             }
+            window.location.href = window.location.origin + '/view-cart';
         }
     },
     mounted(){

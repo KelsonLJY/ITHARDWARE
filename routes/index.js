@@ -33,7 +33,7 @@ router.get('/about' ,(req, res) => {
 router.get('/items' ,(req, res) => {
     res.render('Items')
 })
-router.get('/delivery-info' ,async (req, res) => {
+router.get('/delivery-info' , isAuth,async (req, res) => {
     res.render('Checkout')
 })
 router.get('/place-order' , isAuth ,(req, res) => {

@@ -154,6 +154,7 @@
                     <tr v-for="(item, index) in items">
                         <td><img :src="item.img_url" width="100px" height="100px" ></td>
                         <td>{{item.descriptions}}<br>
+                            <span style="color:red;">Available Qty : {{item.available_qty}}</span><br>
                             <span>Price : ${{item.price}}</span><br>
                             <span>Qty : <input type="number" :name="'qty' + index" v-model="item.qty" v-validate="'required|min:1'"/></span>
                             <span class="txt-danger" v-if="errors.has('qty' + index)">Invalid qty</span><br>
@@ -164,9 +165,9 @@
                 </table>
                 
                 <section class="carts">
-                        <label for="subtotal">Sub Total:</label>
+                        <label for="subtotal">Sub Total: $</label>
                         <input type="text" id="subtotal" name="subtotal" disabled :value="total"><br><br>
-                        <label for="deliveryfee">Delivery Fee:</label>
+                        <label for="deliveryfee">Delivery Fee: $</label>
                         <input type="text" id="deliveryfee" name="deliveryfee" value="2" disabled><br><br>
                         <input type="submit" value="Checkout" @click.prevent="onClickedCheckout"/>
                 </section>

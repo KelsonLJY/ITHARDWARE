@@ -153,7 +153,7 @@
             <span class="txt-danger" v-if="errors.has('email')">{{ errors.first('email') }}</span><br>
 
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" v-model="user.password"><br><br>
+            <input type="password" id="password" name="password" v-model="user.password" v-validate="'required'"><br><br>
             <input type="submit" value="Login"  @click.prevent="login">
            
         </form>
