@@ -48,15 +48,15 @@ router.get('/contact' ,(req, res) => {
 })
 
 router.get('/helpadvice' ,(req, res) => {
-    res.render('helpadvice')
+    res.render('HelpAdvice')
 })
 
 router.get('/returnpolicy' ,(req, res) => {
-    res.render('returnpolicy')
+    res.render('ReturnPolicy')
 })
 
 router.get('/termscondition' ,(req, res) => {
-    res.render('termscondition')
+    res.render('TermsCondition')
 })
 
 
