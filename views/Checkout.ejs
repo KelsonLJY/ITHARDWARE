@@ -171,13 +171,13 @@
                 <br><br>
 
                 <label for="expiry_date">Expiry Date (mm):</label>
-                <input type="number" id="expiry_date" name="expiry_date_mm" v-validate="'required|max:2|min:2'">
+                <input type="number" id="expiry_date" name="expiry_date_mm" v-validate="'required|max:2|min:2|between:1,12'">
                 <span class="txt-danger" v-if="errors.has('expiry_date_mm')">{{ errors.first('expiry_date_mm') }}</span>
 
                 <br><br>
-                <label for="expiry_date">Expiry Date (dd):</label>
-                <input type="number" id="expiry_date_dd" name="expiry_date_dd" v-validate="'required|max:2|min:2'">
-                <span class="txt-danger" v-if="errors.has('expiry_date_dd')">{{ errors.first('expiry_date_dd') }}</span>
+                <label for="expiry_date">Expiry Date (Year):</label>
+                <input type="number" id="expiry_date_dd" name="expiry_date_yy" v-validate="'required|max:2|min:2'">
+                <span class="txt-danger" v-if="errors.has('expiry_date_yy')">{{ errors.first('expiry_date_yy') }}</span>
 
                 <br><br>
 
