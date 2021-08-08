@@ -161,7 +161,7 @@
                         <tr v-for="(item, index) in orders">
                            
                             <td>Order No. <a :href="'/order-detail?order_id='+ item._id" style="color:blue">{{item._id}}</a><br>
-                                <span>Order Status : {{order.status == 'Pending'?'Processing' : order.status}}</span><br>
+                                <span>Order Status : {{item.status == 'Pending'?'Processing' : item.status}}</span><br>
 
                                 <span>Order Date : {{formatDate(item.order_date)}}</span><br>
                                 <span>Delivery On : {{formatDate(item.delivery_date)}}</span><br>
