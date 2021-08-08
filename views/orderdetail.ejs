@@ -160,6 +160,7 @@
                         <td colspan="2">
                             <span>Order Date : {{formatDate(order.order_date)}}</span><br>
                             <span>Delivery On : {{formatDate(order.delivery_date)}}</span><br>
+                            <span>Delivery On : {{(order.status) == 'Pending'?'Processing':order.status}}</span><br>
                         </td>
                     </tr>
                     <tr v-for="(detail, index) in order.details">
